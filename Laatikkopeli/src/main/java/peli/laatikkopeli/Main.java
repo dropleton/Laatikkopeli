@@ -1,9 +1,13 @@
 package peli.laatikkopeli;
 
+import peli.laatikkopeli.logiikka.Ruutu;
+import peli.laatikkopeli.logiikka.Kentta;
+import peli.laatikkopeli.logiikka.Hahmo;
+
 public class Main {
 
     public static void main(String[] args) {
-        Kentta kentta = new Kentta(3, 5);
+        Kentta kentta = new Kentta(4, 8);
         kentta.asetaMaaliruutu(3, 5);
         for (Ruutu ruutu : kentta.getRuudut()) {
             System.out.println(ruutu);
@@ -15,6 +19,16 @@ public class Main {
         System.out.println("Ala: " + kentta.getRuudut().get(i).getAla());
         System.out.println("Vasen: " + kentta.getRuudut().get(i).getVasen());
         System.out.println("Oikea: " + kentta.getRuudut().get(i).getOikea());
+
+        System.out.println("");
+
+        Hahmo hahmo = new Hahmo(kentta.getRuudut().get(0));
+        System.out.println(hahmo);
+        hahmo.liikuAlas();
+        System.out.println(hahmo);
+        hahmo.liikuAlas();
+        System.out.println(hahmo);
+
     }
 
 }

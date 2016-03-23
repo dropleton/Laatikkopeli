@@ -1,4 +1,4 @@
-package peli.laatikkopeli;
+package peli.laatikkopeli.logiikka;
 
 import java.util.ArrayList;
 

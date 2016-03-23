@@ -1,4 +1,4 @@
-package peli.laatikkopeli;
+package peli.laatikkopeli.logiikka;
 
 public class Ruutu {
 
