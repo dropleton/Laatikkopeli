@@ -18,5 +18,5 @@ Mahdollista pelin keskeytystä varten ikkunan nurkassa on "Give up" -nappi, jota
 
 **Luokkakaavio:**
 
-![Luokkakaavio](/home/jetolvan/Laatikkopeli/dokumentointi/LaatikkopeliLuokkakaavio.png "Luokkakaavio")
+![Luokkakaavio](https://github.com/dropleton/Laatikkopeli/blob/master/dokumentointi/LaatikkopeliLuokkakaavio.png "Luokkakaavio")
 
