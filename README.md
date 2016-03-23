@@ -4,6 +4,6 @@ Tarkoituksena luoda Sokoban-tyyppinen peli, jossa pelihahmon tehtävänä on sii
 
 ##Dokumentaatio
 
-- [aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
+- [aiheen kuvaus](Laatikkopeli/dokumentaatio/aiheenKuvausJaRakenne.md)
 
-- [tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+- [tuntikirjanpito](Laatikkopeli/dokumentaatio/tuntikirjanpito.md)

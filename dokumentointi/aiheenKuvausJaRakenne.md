@@ -16,3 +16,7 @@ Mahdollista pelin keskeytystä varten ikkunan nurkassa on "Give up" -nappi, jota
 - Pelin pelaaminen uudelleen "Try again"-nappia painamalla
 - Pelin lopetus ja ohjelman sulkeminen "Close"-nappia painamalla
 
+**Luokkakaavio:**
+
+![Alt text](/home/jetolvan/Laatikkopeli/dokumentointi "Luokkakaavio")
+
