@@ -4,6 +4,6 @@ Tarkoituksena luoda Sokoban-tyyppinen peli, jossa pelihahmon tehtävänä on sii
 
 ##Dokumentaatio
 
-[aiheen kuvaus](https://github.com/dropleton/Laatikkopeli/blob/master/dokumentointi/aiheenKuvausJaRakenne.md)
+[Aiheen kuvaus](https://github.com/dropleton/Laatikkopeli/blob/master/dokumentointi/aiheenKuvausJaRakenne.md)
 
-[tuntikirjanpito](https://github.com/dropleton/Laatikkopeli/blob/master/dokumentointi/tuntikirjanpito.md)
+[Tuntikirjanpito](https://github.com/dropleton/Laatikkopeli/blob/master/dokumentointi/aiheenKuvausJaRakenne.md)
