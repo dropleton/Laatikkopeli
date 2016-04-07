@@ -1,15 +1,22 @@
-package peli.laatikkopeli.logiikka;
+package peli.laatikkopeli.kayttoliittyma;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
+import javax.swing.*;
+import peli.laatikkopeli.logiikka.*;
 
-public class Kentta {
+public class Pelikentta extends JPanel {
 
     private int leveys;
     private int korkeus;
     private ArrayList<Ruutu> ruudut;
     private ArrayList<Laatikko> laatikot;
+    private Hahmo hahmo;
 
-    public Kentta(int leveys, int korkeus) {
+    public Pelikentta(int korkeus, int leveys) {
+        super.setBackground(Color.WHITE);
+        this.hahmo = null;
         this.korkeus = korkeus;
         this.leveys = leveys;
         this.ruudut = new ArrayList();
@@ -28,6 +35,8 @@ public class Kentta {
         asetaVasemmanpuoleinenRuutu();
         asetaOikeanpuoleinenRuutu();
         
+        this.hahmo = new Hahmo(this.ruudut.get(20));
+
         asetaLaatikot();
     }
 
@@ -82,9 +91,10 @@ public class Kentta {
             }
         }
     }
-    
+
     public void asetaLaatikot() {
         Laatikko laatikko = new Laatikko(this.ruudut.get(4));
+        this.laatikot.add(laatikko);
     }
 
     public ArrayList<Ruutu> getRuudut() {
@@ -107,10 +117,23 @@ public class Kentta {
         }
         return null;
     }
+    
+    public Hahmo getHahmo() {
+        return this.hahmo;
+    }
 
     @Override
     public String toString() {
         return this.leveys + ", " + this.korkeus;
+    }
+
+    @Override
+    protected void paintComponent(Graphics graphics) {
+        super.paintComponent(graphics);
+        hahmo.piirra(graphics);
+        for(Laatikko laatikko : this.laatikot) {
+            laatikko.piirra(graphics);
+        }
     }
 
 }

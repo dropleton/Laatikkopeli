@@ -10,6 +10,7 @@ public class Ruutu {
     private Ruutu ala;
     private Ruutu vasen;
     private Ruutu oikea;
+    private int koko;
 
     public Ruutu(int x, int y) {
         this.x = x;
@@ -20,6 +21,7 @@ public class Ruutu {
         this.ala = null;
         this.vasen = null;
         this.oikea = null;
+        this.koko = 10;
     }
 
     public int getX() {

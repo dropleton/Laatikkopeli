@@ -1,5 +1,7 @@
 package peli.laatikkopeli.logiikka;
 
+import java.awt.Graphics;
+
 public class Hahmo {
 
     private Ruutu ruutu;
@@ -30,6 +32,10 @@ public class Hahmo {
         if (this.ruutu.getYla() != null) {
             this.ruutu = this.ruutu.getOikea();
         }
+    }
+    
+    public void piirra(Graphics graphics) {
+        graphics.fillOval(this.ruutu.getX(), this.ruutu.getY(), 10, 10);
     }
 
     @Override
