@@ -1,5 +1,8 @@
 package peli.laatikkopeli.logiikka;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 public class Ruutu {
 
     private int x;
@@ -86,6 +89,17 @@ public class Ruutu {
 
     public Ruutu getOikea() {
         return oikea;
+    }
+    
+    public void piirra(Graphics graphics) {
+        if(this.onMaaliruutu) {
+            graphics.setColor(Color.GREEN);
+            graphics.fillRect(x, y, 30, 30);
+        }
+        graphics.setColor(Color.white);
+        graphics.fillRect(x, y, 10, 10);
+        graphics.setColor(Color.black);
+        graphics.drawRect(x, y, 1, 1);
     }
 
     @Override

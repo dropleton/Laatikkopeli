@@ -1,5 +1,6 @@
 package peli.laatikkopeli.logiikka;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Laatikko {
@@ -29,7 +30,10 @@ public class Laatikko {
     }
     
     public void piirra(Graphics graphics) {
+        graphics.setColor(Color.BLUE);
         graphics.fillRect(this.ruutu.getX(), this.ruutu.getY(), 10, 10);
+        graphics.setColor(Color.black);
+        graphics.drawRect(this.ruutu.getX(), this.ruutu.getY(), 1, 1);
     }
     
 //    public boolean onMaalissa() {

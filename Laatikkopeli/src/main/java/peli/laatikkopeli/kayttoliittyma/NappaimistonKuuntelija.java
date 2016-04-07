@@ -21,10 +21,21 @@ public class NappaimistonKuuntelija implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            hahmo.liikuVasemmalle();
-        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            hahmo.liikuOikealle();
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_LEFT:
+                hahmo.liikuVasemmalle();
+                break;
+            case KeyEvent.VK_RIGHT:
+                hahmo.liikuOikealle();
+                break;
+            case KeyEvent.VK_UP:
+                hahmo.liikuAlas();
+                break;
+            case KeyEvent.VK_DOWN:
+                hahmo.liikuYlos();
+                break;
+            default:
+                break;
         }
 
         component.repaint();

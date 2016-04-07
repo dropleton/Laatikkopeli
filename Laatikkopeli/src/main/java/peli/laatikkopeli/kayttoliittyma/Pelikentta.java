@@ -17,8 +17,8 @@ public class Pelikentta extends JPanel {
     public Pelikentta(int korkeus, int leveys) {
         super.setBackground(Color.WHITE);
         this.hahmo = null;
-        this.korkeus = korkeus;
-        this.leveys = leveys;
+        this.korkeus = korkeus * 10;
+        this.leveys = leveys * 10;
         this.ruudut = new ArrayList();
         this.laatikot = new ArrayList();
         luoKentta();
@@ -121,6 +121,14 @@ public class Pelikentta extends JPanel {
     public Hahmo getHahmo() {
         return this.hahmo;
     }
+    
+    public int getKorkeus() {
+        return this.korkeus;
+    }
+    
+    public int getLeveys() {
+        return this.leveys;
+    }
 
     @Override
     public String toString() {
@@ -130,10 +138,12 @@ public class Pelikentta extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
+        for(Ruutu ruutu : this.ruudut) {
+            ruutu.piirra(graphics);
+        }
         hahmo.piirra(graphics);
         for(Laatikko laatikko : this.laatikot) {
             laatikko.piirra(graphics);
         }
     }
-
 }

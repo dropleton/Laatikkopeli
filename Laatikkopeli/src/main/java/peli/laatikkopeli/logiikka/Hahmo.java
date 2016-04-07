@@ -1,5 +1,6 @@
 package peli.laatikkopeli.logiikka;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Hahmo {
@@ -29,12 +30,13 @@ public class Hahmo {
     }
 
     public void liikuOikealle() {
-        if (this.ruutu.getYla() != null) {
+        if (this.ruutu.getOikea() != null) {
             this.ruutu = this.ruutu.getOikea();
         }
     }
     
     public void piirra(Graphics graphics) {
+        graphics.setColor(Color.red);
         graphics.fillOval(this.ruutu.getX(), this.ruutu.getY(), 10, 10);
     }
 

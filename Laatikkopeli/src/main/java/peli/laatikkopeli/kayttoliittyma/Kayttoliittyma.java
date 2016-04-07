@@ -2,7 +2,8 @@ package peli.laatikkopeli.kayttoliittyma;
 
 import java.awt.Container;
 import java.awt.Dimension;
-import javax.swing.JFrame;
+import java.awt.GridLayout;
+import javax.swing.*;
 import javax.swing.WindowConstants;
 import peli.laatikkopeli.logiikka.*;
 
@@ -32,6 +33,12 @@ public class Kayttoliittyma implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
+//        GridLayout ruudukko = new GridLayout(this.kentta.getKorkeus(), this.kentta.getLeveys());
+//        container.setLayout(ruudukko);
+//        for(Ruutu ruutu : this.kentta.getRuudut()) {
+//            
+//            container.add(new JButton("porkkana"));
+//        }
         container.add(this.kentta);
         frame.addKeyListener(new NappaimistonKuuntelija(this.hahmo, this.kentta));
     }
