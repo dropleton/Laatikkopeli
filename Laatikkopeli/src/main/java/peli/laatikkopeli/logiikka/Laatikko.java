@@ -30,10 +30,10 @@ public class Laatikko {
     }
     
     public void piirra(Graphics graphics) {
-        graphics.setColor(Color.BLUE);
-        graphics.fillRect(this.ruutu.getX(), this.ruutu.getY(), 10, 10);
-        graphics.setColor(Color.black);
-        graphics.drawRect(this.ruutu.getX(), this.ruutu.getY(), 1, 1);
+//        graphics.setColor(Color.BLUE);
+//        graphics.fillRect(this.ruutu.getX(), this.ruutu.getY(), 100, 100);
+//        graphics.setColor(Color.white);
+//        graphics.drawRect(this.ruutu.getX(), this.ruutu.getY(), 1, 1);
     }
     
 //    public boolean onMaalissa() {

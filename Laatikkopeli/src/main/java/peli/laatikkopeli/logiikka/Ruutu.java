@@ -90,16 +90,19 @@ public class Ruutu {
     public Ruutu getOikea() {
         return oikea;
     }
-    
+
     public void piirra(Graphics graphics) {
-        if(this.onMaaliruutu) {
-            graphics.setColor(Color.GREEN);
-            graphics.fillRect(x, y, 30, 30);
+        int piirrettavax = this.x * 100;
+        int piirrettavay = this.y * 100;
+        if (this.onMaaliruutu) {
+            graphics.setColor(Color.green);
+            graphics.fillRect(piirrettavax, piirrettavay, 100, 100);
+        } else {
+            graphics.setColor(Color.black);
+            graphics.fillRect(piirrettavax, piirrettavay, 100, 100);
+            graphics.setColor(Color.white);
+            graphics.drawRect(piirrettavax, piirrettavay, 1, 1);
         }
-        graphics.setColor(Color.white);
-        graphics.fillRect(x, y, 10, 10);
-        graphics.setColor(Color.black);
-        graphics.drawRect(x, y, 1, 1);
     }
 
     @Override

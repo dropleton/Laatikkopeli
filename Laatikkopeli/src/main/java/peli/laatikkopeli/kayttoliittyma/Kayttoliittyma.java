@@ -22,7 +22,7 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Otsikko");
-        frame.setPreferredSize(new Dimension(800, 600));
+        frame.setPreferredSize(new Dimension(kentta.getLeveys() * 100, kentta.getKorkeus() * 100));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

@@ -37,7 +37,7 @@ public class Hahmo {
     
     public void piirra(Graphics graphics) {
         graphics.setColor(Color.red);
-        graphics.fillOval(this.ruutu.getX(), this.ruutu.getY(), 10, 10);
+        graphics.fillOval(this.ruutu.getX(), this.ruutu.getY(), 100, 100);
     }
 
     @Override

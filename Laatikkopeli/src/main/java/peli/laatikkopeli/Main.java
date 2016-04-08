@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         Pelikentta kentta = new Pelikentta(8, 6);
-        kentta.asetaMaaliruutu(3, 5);
+        kentta.asetaMaaliruutu(1, 2);
         
         Kayttoliittyma liittyma = new Kayttoliittyma(kentta, kentta.getHahmo());
         SwingUtilities.invokeLater(liittyma);
