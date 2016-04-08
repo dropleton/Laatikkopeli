@@ -41,17 +41,6 @@ public class Pelikentta extends JPanel {
     }
 
     public void asetaYlapuolinenRuutu() {
-//        for (Ruutu ruutu : this.ruudut) {
-//            int x = ruutu.getX();
-//            int y = ruutu.getY() + 1;
-//            for (Ruutu yla : this.ruudut) {
-//                if (yla.getX() == x && yla.getY() == y) {
-//                    ruutu.setYla(yla);
-//                    break;
-//                }
-//            }
-//        }
-
         for (int i = 0; i < this.leveys; i++) {
             for (int j = 0; j < this.korkeus; j++) {
                 int x = this.ruudut[i][j].getX();
@@ -65,16 +54,6 @@ public class Pelikentta extends JPanel {
     }
 
     public void asetaAlapuolinenRuutu() {
-//        for (Ruutu ruutu : this.ruudut) {
-//            int x = ruutu.getX();
-//            int y = ruutu.getY() - 1;
-//            for (Ruutu ala : this.ruudut) {
-//                if (ala.getX() == x && ala.getY() == y) {
-//                    ruutu.setAla(ala);
-//                    break;
-//                }
-//            }
-//        }
         for (int i = 0; i < this.leveys; i++) {
             for (int j = 0; j < this.korkeus; j++) {
                 int x = this.ruudut[i][j].getX();
@@ -89,16 +68,6 @@ public class Pelikentta extends JPanel {
     }
 
     public void asetaVasemmanpuoleinenRuutu() {
-//        for (Ruutu ruutu : this.ruudut) {
-//            int x = ruutu.getX() - 1;
-//            int y = ruutu.getY();
-//            for (Ruutu vasen : this.ruudut) {
-//                if (vasen.getX() == x && vasen.getY() == y) {
-//                    ruutu.setVasen(vasen);
-//                    break;
-//                }
-//            }
-//        }
         for (int i = 0; i < this.leveys; i++) {
             for (int j = 0; j < this.korkeus; j++) {
                 int x = this.ruudut[i][j].getX() - 1;
@@ -113,16 +82,6 @@ public class Pelikentta extends JPanel {
     }
 
     public void asetaOikeanpuoleinenRuutu() {
-//        for (Ruutu ruutu : this.ruudut) {
-//            int x = ruutu.getX() + 1;
-//            int y = ruutu.getY();
-//            for (Ruutu oikea : this.ruudut) {
-//                if (oikea.getX() == x && oikea.getY() == y) {
-//                    ruutu.setOikea(oikea);
-//                    break;
-//                }
-//            }
-//        }
         for (int i = 0; i < this.leveys; i++) {
             for (int j = 0; j < this.korkeus; j++) {
                 int x = this.ruudut[i][j].getX() + 1;
@@ -137,8 +96,12 @@ public class Pelikentta extends JPanel {
     }
 
     public void asetaLaatikot() {
-        Laatikko laatikko = new Laatikko(this.ruudut[1][2]);
+        Laatikko laatikko = new Laatikko(this.ruudut[0][0]);
         this.laatikot.add(laatikko);
+    }
+
+    public ArrayList<Laatikko> getLaatikot() {
+        return this.laatikot;
     }
 
     public Ruutu[][] getRuudut() {
@@ -146,21 +109,11 @@ public class Pelikentta extends JPanel {
     }
 
     public void asetaMaaliruutu(int x, int y) {
-//        for (Ruutu ruutu : this.ruudut) {
-//            if (ruutu.getX() == x && ruutu.getY() == y) {
-//                ruutu.asetaMaaliruuduksi(true);
-//            }
-//        }
         this.ruudut[x][y].asetaMaaliruuduksi(true);
     }
 
     public Ruutu getMaaliruutu() {
-//        for (Ruutu ruutu : this.ruudut) {
-//            if (ruutu.onkoMaaliruutu()) {
-//                return ruutu;
-//            }
-//        }
-//        return null;
+
         for (int i = 0; i < this.korkeus; i++) {
             for (int j = 0; j < this.leveys; j++) {
                 if (this.ruudut[i][j].onkoMaaliruutu()) {

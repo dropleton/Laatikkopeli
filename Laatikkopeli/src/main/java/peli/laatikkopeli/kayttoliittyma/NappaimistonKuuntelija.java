@@ -45,4 +45,9 @@ public class NappaimistonKuuntelija implements KeyListener {
     public void keyReleased(KeyEvent e) {
     }
 
+    @Override
+    public String toString() {
+        return this.hahmo.toString();
+    }
+    
 }

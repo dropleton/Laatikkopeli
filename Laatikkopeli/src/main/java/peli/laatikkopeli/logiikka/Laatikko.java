@@ -30,10 +30,15 @@ public class Laatikko {
     }
     
     public void piirra(Graphics graphics) {
-//        graphics.setColor(Color.BLUE);
-//        graphics.fillRect(this.ruutu.getX(), this.ruutu.getY(), 100, 100);
-//        graphics.setColor(Color.white);
-//        graphics.drawRect(this.ruutu.getX(), this.ruutu.getY(), 1, 1);
+        graphics.setColor(Color.BLUE);
+        graphics.fillRect(this.ruutu.getX(), this.ruutu.getY(), 100, 100);
+        graphics.setColor(Color.white);
+        graphics.drawRect(this.ruutu.getX(), this.ruutu.getY(), 1, 1);
+    }
+    
+    @Override
+    public String toString() {
+        return "Olen laatikko ja ruudussa " + this.ruutu.toString();
     }
     
 //    public boolean onMaalissa() {
