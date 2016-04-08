@@ -8,6 +8,6 @@ Tarkoituksena luoda Sokoban-tyyppinen peli, jossa pelihahmon tehtävänä on sii
 
 [Tuntikirjanpito](https://github.com/dropleton/Laatikkopeli/blob/master/dokumentointi/tuntikirjanpito.md)
 
-[Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/dropleton/Laatikkopeli/tree/master/dokumentointi/Checkstyle/site)
+[Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/dropleton/Laatikkopeli/tree/master/dokumentointi/Checkstyle/site/checkstyle.html)
 
-[Pit-raportti](https://htmlpreview.github.io/?https://github.com/dropleton/Laatikkopeli/tree/master/dokumentointi/pit/201604081612)
+[Pit-raportti](https://htmlpreview.github.io/?https://github.com/dropleton/Laatikkopeli/tree/master/dokumentointi/pit/201604081612/index.html)
