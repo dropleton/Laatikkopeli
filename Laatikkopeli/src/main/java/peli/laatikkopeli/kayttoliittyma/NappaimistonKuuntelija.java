@@ -1,3 +1,8 @@
+/**
+ * Graafisen käyttöliittymän frame-olioon lisätty kuuntelija, joka
+ * huolehtii nuolinäppäinten kuuntelusta.
+ */
+
 package peli.laatikkopeli.kayttoliittyma;
 
 import java.awt.Component;

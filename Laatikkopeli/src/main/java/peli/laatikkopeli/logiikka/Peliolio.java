@@ -1,8 +1,12 @@
+/**
+ * Pelikentalla Ruudussa oleva Laatikko tai Pelihahmo.
+ */
+
 package peli.laatikkopeli.logiikka;
 
 public class Peliolio {
 
-    private Ruutu ruutu;
+    protected Ruutu ruutu;
 
     public Peliolio(Ruutu ruutu) {
         this.ruutu = ruutu;

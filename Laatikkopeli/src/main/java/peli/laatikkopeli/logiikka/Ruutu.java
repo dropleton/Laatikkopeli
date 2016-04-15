@@ -1,57 +1,56 @@
+/**
+ * Luokka sisältää tiedot yksittäisen Ruudun koordinaateista,
+ * maaliruudun sijainnin ja Ruudussa mahdollisesti olevan 
+ * Peliolion.
+ */
+
 package peli.laatikkopeli.logiikka;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Graphics;
+import java.awt.event.ActionListener;
+import javax.swing.JLabel;
 
-public class Ruutu { //HUOM HUOM HUOM 
+public class Ruutu extends JLabel { //HUOM HUOM HUOM 
 
-    private int x;
-    private int y;
-    private boolean varattu;
+    private ActionListener kuuntelija;
+    private int rivi;
+    private int sarake;
+    private Peliolio olio;
     private boolean onMaaliruutu;
     private Ruutu yla;
     private Ruutu ala;
     private Ruutu vasen;
     private Ruutu oikea;
-    private int koko;
 
     public Ruutu(int x, int y) {
-        this.x = x;
-        this.y = y;
-        this.varattu = false;
+        this.rivi = x;
+        this.sarake = y;
+        this.olio = null;
         this.onMaaliruutu = false;
         this.yla = null;
         this.ala = null;
         this.vasen = null;
         this.oikea = null;
-        this.koko = 100;
+//        setPreferredSize(new Dimension(100, 100));
     }
 
 //    @Override
-    public int getX() {
-        return x;
+    public int getRivi() {
+        return this.rivi;
     }
     
 //    @Override
-    public int getY() {
-        return y;
-    }
-
-    public boolean isVarattu() {
-        return varattu;
+    public int getSarake() {
+        return this.sarake;
     }
 
     public void setX(int x) {
-        this.x = x;
+        this.rivi = x;
     }
 
     public void setY(int y) {
-        this.y = y;
-    }
-
-    public void setVarattu(boolean varattu) {
-        this.varattu = varattu;
+        this.sarake = y;
     }
 
     public boolean onkoMaaliruutu() {
@@ -93,10 +92,18 @@ public class Ruutu { //HUOM HUOM HUOM
     public Ruutu getOikea() {
         return oikea;
     }
+    
+    public void asetaOlio(Peliolio olio) {
+        this.olio = olio;
+    }
+    
+    public Peliolio getOlio() {
+        return this.olio;
+    }
 
     public void piirra(Graphics graphics) {
-        int piirrettavax = this.x * 100;
-        int piirrettavay = this.y * 100;
+        int piirrettavax = this.rivi * 100;
+        int piirrettavay = this.sarake * 100;
         if (this.onMaaliruutu) {
             graphics.setColor(Color.green);
             graphics.fillRect(piirrettavax, piirrettavay, 100, 100);
@@ -110,6 +117,6 @@ public class Ruutu { //HUOM HUOM HUOM
 
     @Override
     public String toString() {
-        return "(" + this.x + "," + this.y + ") " + this.onMaaliruutu;
+        return "(" + this.rivi + "," + this.sarake + ")";
     }
 }

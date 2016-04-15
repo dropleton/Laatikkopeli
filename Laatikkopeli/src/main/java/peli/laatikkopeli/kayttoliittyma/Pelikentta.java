@@ -1,8 +1,14 @@
+/**
+ * Sisältää kaksiulotteisen taulukon Ruutuja, ArrayListiin tallennetut 
+ * Laatikot ja Hahmon.
+ */
+
 package peli.laatikkopeli.kayttoliittyma;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.*;
 import peli.laatikkopeli.logiikka.*;
 
@@ -25,7 +31,11 @@ public class Pelikentta extends JPanel {
         this.maaliruutu = null;
         luoKentta();
     }
-
+/**
+ * Metodi lisää Ruudut taulukkoon, asettaa jokaiselle Ruudulle sen
+ * naapuriruudut ja lisää lopuksi Laatikot, Hahmon ja Maaliruudun muiden
+ * metodikutsujen avulla.
+ */
     private void luoKentta() {
         for (int i = 0; i < this.leveys; i++) {
             for (int j = 0; j < this.korkeus; j++) {
@@ -33,14 +43,13 @@ public class Pelikentta extends JPanel {
             }
         }
         asetaRuudut();
-
-        this.hahmo = new Hahmo(this.ruudut[0][0]);
-
+        asetaHahmo();
         asetaLaatikot();
-        
-        asetaMaaliruutu(1, 2);
+        asetaMaaliruutu();
     }
-
+/**
+ * Asettaa jokaiselle ruudulle naapuriruudut.
+ */
     public void asetaRuudut() {
         for (int i = 0; i < this.leveys; i++) {
             for (int j = 0; j < this.korkeus; j++) {
@@ -93,9 +102,35 @@ public class Pelikentta extends JPanel {
         }
     }
 
+/**
+ * Asettaa Pelikentalle 2-7 laatikkoa satunnaisesti valittuihin Ruutuihin.
+ */
     public void asetaLaatikot() {
-        Laatikko laatikko = new Laatikko(this.ruudut[0][0]);
-        this.laatikot.add(laatikko);
+        Random random = new Random();
+        // laatikoiden maara valilla 2..7
+        int lkm = random.nextInt((7 - 2) + 1) + 2;
+        for (int i = 1; i <= lkm; i++) {
+            Laatikko laatikko = new Laatikko(arvoRuutu());
+            this.laatikot.add(laatikko);
+        }
+    }
+    
+    /**
+     * Asettaa Hahmon satunnaisesti valittuun ruutuun.
+     */
+    public void asetaHahmo() {
+        this.hahmo = new Hahmo(arvoRuutu());
+    }
+    
+    /**
+     * Arpoo satunnaisesti Ruudun Hahmon ja Laatikon asettamista varten.
+     * @return satunnaisesti valittu Ruutu
+     */
+    public Ruutu arvoRuutu() {
+        Random random = new Random();
+        int x = random.nextInt(this.leveys);
+        int y = random.nextInt(this.korkeus);
+        return this.ruudut[x][y];
     }
 
     public ArrayList<Laatikko> getLaatikot() {
@@ -106,8 +141,8 @@ public class Pelikentta extends JPanel {
         return this.ruudut;
     }
 
-    public void asetaMaaliruutu(int x, int y) {
-        this.ruudut[x][y].asetaMaaliruuduksi(true);
+    public void asetaMaaliruutu() {
+        arvoRuutu().asetaMaaliruuduksi(true);
     }
 
     public Ruutu getMaaliruutu() {

@@ -1,38 +1,16 @@
+/**
+ * Perii luokalta Peliolio liikkumiseen tarvittavat metodit.
+ */
+
 package peli.laatikkopeli.logiikka;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Hahmo {
-
-    private Ruutu ruutu;
+public class Hahmo extends Peliolio {
 
     public Hahmo(Ruutu ruutu) {
-        this.ruutu = ruutu;
-    }
-
-    public void liikuYlos() {
-        if (this.ruutu.getYla() != null) {
-            this.ruutu = this.ruutu.getYla();
-        }
-    }
-
-    public void liikuAlas() {
-        if (this.ruutu.getAla() != null) {
-            this.ruutu = this.ruutu.getAla();
-        }
-    }
-
-    public void liikuVasemmalle() {
-        if (this.ruutu.getVasen() != null) {
-            this.ruutu = this.ruutu.getVasen();
-        }
-    }
-
-    public void liikuOikealle() {
-        if (this.ruutu.getOikea() != null) {
-            this.ruutu = this.ruutu.getOikea();
-        }
+        super(ruutu);
     }
     
     public void piirra(Graphics graphics) {

@@ -12,10 +12,13 @@ public class LaatikkoTest {
 
     Pelikentta kentta;
     Laatikko laatikko;
+    int i;
 
     @Before
     public void setUp() {
-        this.kentta = new Pelikentta(2, 3);
+        this.kentta = new Pelikentta(2, 2);
+        i = kentta.getLaatikot().size() - 1;
+        this.laatikko = new Laatikko(this.kentta.getRuudut()[0][0]);
     }
 
     public LaatikkoTest() {
@@ -35,19 +38,20 @@ public class LaatikkoTest {
 
     @Test
     public void konstruktoriAsettaaRuudunOikein() {
-        assertEquals(kentta.getLaatikot().get(0).toString(), "Olen laatikko ja ruudussa (0,0) false");
+        assertEquals(this.laatikko.toString(), "Olen laatikko ja ruudussa (0,0)");
     }
 
-    @Test
-    public void laatikkoaVoiSiirtaa() {
-        kentta.getLaatikot().get(0).siirraYlos();
-        assertEquals(this.kentta.getLaatikot().get(0).toString(), "Olen laatikko ja ruudussa (0,1) false");
-        kentta.getLaatikot().get(0).siirraOikealle();
-        assertEquals(this.kentta.getLaatikot().get(0).toString(), "Olen laatikko ja ruudussa (1,1) false");
-        kentta.getLaatikot().get(0).siirraAlas();
-        assertEquals(this.kentta.getLaatikot().get(0).toString(), "Olen laatikko ja ruudussa (1,0) false");
-        kentta.getLaatikot().get(0).siirraVasemmalle();
-        assertEquals(this.kentta.getLaatikot().get(0).toString(), "Olen laatikko ja ruudussa (0,0) false");
-    }
+//    @Test
+//    public void laatikkoaVoiSiirtaa() {
+//
+//        this.laatikko.liikuYlos();
+//        assertEquals(this.laatikko.toString(), "Olen laatikko ja ruudussa (0,1)");
+//        this.laatikko.liikuOikealle();
+//        assertEquals(this.laatikko.toString(), "Olen laatikko ja ruudussa (1,1)");
+//        this.laatikko.liikuAlas();
+//        assertEquals(this.laatikko.toString(), "Olen laatikko ja ruudussa (1,0)");
+//        this.laatikko.liikuVasemmalle();
+//        assertEquals(this.laatikko.toString(), "Olen laatikko ja ruudussa (0,0)");
+//    }
 
 }

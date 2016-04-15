@@ -19,7 +19,7 @@ public class RuutuTest {
     @Test
     public void konstruktoriAsettaaArvotOikein() {
         String tulos = this.ruutu.toString();
-        assertEquals("(4,6) false", tulos);
+        assertEquals("(4,6)", tulos);
 
     }
 }

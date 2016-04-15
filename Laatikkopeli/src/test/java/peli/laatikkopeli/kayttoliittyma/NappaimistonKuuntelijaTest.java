@@ -38,7 +38,7 @@ public class NappaimistonKuuntelijaTest {
 
     @Test
     public void konstruktoriAsettaaArvotOikein() {
-        assertEquals(this.kuuntelija.toString(), "Olen ruudussa (0,1) false");
+        assertEquals(this.kuuntelija.toString(), "Olen ruudussa (0,1)");
     }
     
 //    @Test

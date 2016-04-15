@@ -25,18 +25,18 @@ public class HahmoTest {
 
     @Test
     public void konstruktoriAsettaaAloitusruudunOikein() {
-        assertEquals(this.hahmo.toString(), "Olen ruudussa (1,2) false");
+        assertEquals(this.hahmo.toString(), "Olen ruudussa (1,2)");
     }
 
     @Test
     public void hahmoEiLiikuKentanUlkopuolelle() {
         this.pienihahmo.liikuAlas();
-        assertEquals(this.pienihahmo.toString(), "Olen ruudussa (0,0) false");
+        assertEquals(this.pienihahmo.toString(), "Olen ruudussa (0,0)");
         this.pienihahmo.liikuOikealle();
-        assertEquals(this.pienihahmo.toString(), "Olen ruudussa (0,0) false");
+        assertEquals(this.pienihahmo.toString(), "Olen ruudussa (0,0)");
         this.pienihahmo.liikuVasemmalle();
-        assertEquals(this.pienihahmo.toString(), "Olen ruudussa (0,0) false");
+        assertEquals(this.pienihahmo.toString(), "Olen ruudussa (0,0)");
         this.pienihahmo.liikuYlos();
-        assertEquals(this.pienihahmo.toString(), "Olen ruudussa (0,0) false");
+        assertEquals(this.pienihahmo.toString(), "Olen ruudussa (0,0)");
     }
 }
