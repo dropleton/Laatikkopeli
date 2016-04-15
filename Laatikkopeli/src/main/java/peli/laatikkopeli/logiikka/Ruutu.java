@@ -1,9 +1,10 @@
 package peli.laatikkopeli.logiikka;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics;
 
-public class Ruutu {
+public class Ruutu { //HUOM HUOM HUOM 
 
     private int x;
     private int y;
@@ -24,13 +25,15 @@ public class Ruutu {
         this.ala = null;
         this.vasen = null;
         this.oikea = null;
-        this.koko = 10;
+        this.koko = 100;
     }
 
+//    @Override
     public int getX() {
         return x;
     }
-
+    
+//    @Override
     public int getY() {
         return y;
     }

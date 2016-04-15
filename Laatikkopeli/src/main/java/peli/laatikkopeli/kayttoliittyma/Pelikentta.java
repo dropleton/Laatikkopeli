@@ -13,6 +13,7 @@ public class Pelikentta extends JPanel {
     private Ruutu[][] ruudut;
     private ArrayList<Laatikko> laatikot;
     private Hahmo hahmo;
+    private Ruutu maaliruutu;
 
     public Pelikentta(int korkeus, int leveys) {
         super.setBackground(Color.WHITE);
@@ -21,6 +22,7 @@ public class Pelikentta extends JPanel {
         this.leveys = leveys;
         this.ruudut = new Ruutu[leveys][korkeus];
         this.laatikot = new ArrayList();
+        this.maaliruutu = null;
         luoKentta();
     }
 
@@ -30,68 +32,64 @@ public class Pelikentta extends JPanel {
                 this.ruudut[i][j] = new Ruutu(i, j);
             }
         }
-        asetaYlapuolinenRuutu();
-        asetaAlapuolinenRuutu();
-        asetaVasemmanpuoleinenRuutu();
-        asetaOikeanpuoleinenRuutu();
+        asetaRuudut();
 
         this.hahmo = new Hahmo(this.ruudut[0][0]);
 
         asetaLaatikot();
+        
+        asetaMaaliruutu(1, 2);
     }
 
-    public void asetaYlapuolinenRuutu() {
+    public void asetaRuudut() {
         for (int i = 0; i < this.leveys; i++) {
             for (int j = 0; j < this.korkeus; j++) {
-                int x = this.ruudut[i][j].getX();
-                int y = this.ruudut[i][j].getY() + 1;
-                if (y < this.korkeus) {
-                    this.ruudut[i][j].setYla(this.ruudut[x][y]);
-                    System.out.println("tämä: " + this.ruudut[i][j] + " ylä: " + this.ruudut[x][y]);
-                }
+//                if(this.ruudut[i][j].onkoMaaliruutu()) {
+//                    
+//                }
+                asetaYlapuolinenRuutu(i, j);
+                asetaAlapuolinenRuutu(i, j);
+                asetaVasemmanpuoleinenRuutu(i, j);
+                asetaOikeanpuoleinenRuutu(i, j);
             }
         }
     }
 
-    public void asetaAlapuolinenRuutu() {
-        for (int i = 0; i < this.leveys; i++) {
-            for (int j = 0; j < this.korkeus; j++) {
-                int x = this.ruudut[i][j].getX();
-                int y = this.ruudut[i][j].getY() - 1;
-                if (y >= 0) {
-                    this.ruudut[i][j].setAla(this.ruudut[x][y]);
-                    System.out.println("tämä: " + this.ruudut[i][j] + " ala: " + this.ruudut[x][y]);
-
-                }
-            }
+    public void asetaYlapuolinenRuutu(int i, int j) {
+        int x = this.ruudut[i][j].getX();
+        int y = this.ruudut[i][j].getY() + 1;
+        if (y < this.korkeus) {
+            this.ruudut[i][j].setYla(this.ruudut[x][y]);
+            System.out.println("tämä: " + this.ruudut[i][j] + " ylä: " + this.ruudut[x][y]);
         }
     }
 
-    public void asetaVasemmanpuoleinenRuutu() {
-        for (int i = 0; i < this.leveys; i++) {
-            for (int j = 0; j < this.korkeus; j++) {
-                int x = this.ruudut[i][j].getX() - 1;
-                int y = this.ruudut[i][j].getY();
-                if (x >= 0) {
-                    this.ruudut[i][j].setVasen(this.ruudut[x][y]);
-                    System.out.println("tämä: " + this.ruudut[i][j] + " vasen: " + this.ruudut[x][y]);
+    public void asetaAlapuolinenRuutu(int i, int j) {
+        int x = this.ruudut[i][j].getX();
+        int y = this.ruudut[i][j].getY() - 1;
+        if (y >= 0) {
+            this.ruudut[i][j].setAla(this.ruudut[x][y]);
+            System.out.println("tämä: " + this.ruudut[i][j] + " ala: " + this.ruudut[x][y]);
 
-                }
-            }
         }
     }
 
-    public void asetaOikeanpuoleinenRuutu() {
-        for (int i = 0; i < this.leveys; i++) {
-            for (int j = 0; j < this.korkeus; j++) {
-                int x = this.ruudut[i][j].getX() + 1;
-                int y = this.ruudut[i][j].getY();
-                if (x < this.leveys) {
-                    this.ruudut[i][j].setOikea(this.ruudut[x][y]);
-                    System.out.println("tämä: " + this.ruudut[i][j] + " oikea: " + this.ruudut[x][y]);
+    public void asetaVasemmanpuoleinenRuutu(int i, int j) {
+        int x = this.ruudut[i][j].getX() - 1;
+        int y = this.ruudut[i][j].getY();
+        if (x >= 0) {
+            this.ruudut[i][j].setVasen(this.ruudut[x][y]);
+            System.out.println("tämä: " + this.ruudut[i][j] + " vasen: " + this.ruudut[x][y]);
+        }
+    }
 
-                }
-            }
+    public void asetaOikeanpuoleinenRuutu(int i, int j) {
+        int x = this.ruudut[i][j].getX() + 1;
+        int y = this.ruudut[i][j].getY();
+        if (x < this.leveys) {
+            this.ruudut[i][j].setOikea(this.ruudut[x][y]);
+            System.out.println("tämä: " + this.ruudut[i][j] + " oikea: " + this.ruudut[x][y]);
+
         }
     }
 
@@ -113,15 +111,7 @@ public class Pelikentta extends JPanel {
     }
 
     public Ruutu getMaaliruutu() {
-
-        for (int i = 0; i < this.korkeus; i++) {
-            for (int j = 0; j < this.leveys; j++) {
-                if (this.ruudut[i][j].onkoMaaliruutu()) {
-                    return this.ruudut[i][j];
-                }
-            }
-        }
-        return null;
+        return this.maaliruutu;
     }
 
     public Hahmo getHahmo() {
