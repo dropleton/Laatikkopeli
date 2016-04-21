@@ -7,13 +7,15 @@
 package peli.laatikkopeli.logiikka;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
+import peli.laatikkopeli.kayttoliittyma.NappaimistonKuuntelija;
 
 public class Ruutu extends JLabel { //HUOM HUOM HUOM 
 
-    private ActionListener kuuntelija;
+    private NappaimistonKuuntelija kuuntelija;
     private int rivi;
     private int sarake;
     private Peliolio olio;
@@ -32,7 +34,7 @@ public class Ruutu extends JLabel { //HUOM HUOM HUOM
         this.ala = null;
         this.vasen = null;
         this.oikea = null;
-//        setPreferredSize(new Dimension(100, 100));
+        setPreferredSize(new Dimension(100, 100));
     }
 
 //    @Override

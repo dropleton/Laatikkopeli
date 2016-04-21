@@ -7,6 +7,7 @@ package peli.laatikkopeli.kayttoliittyma;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.*;
@@ -23,6 +24,7 @@ public class Pelikentta extends JPanel {
 
     public Pelikentta(int korkeus, int leveys) {
         super.setBackground(Color.WHITE);
+
         this.hahmo = null;
         this.korkeus = korkeus;
         this.leveys = leveys;
@@ -165,18 +167,30 @@ public class Pelikentta extends JPanel {
     public String toString() {
         return this.leveys + ", " + this.korkeus;
     }
-
-    @Override
-    protected void paintComponent(Graphics graphics) {
-        super.paintComponent(graphics);
-        for (int i = 0; i < this.leveys; i++) {
-            for (int j = 0; j < this.korkeus; j++) {
-                this.ruudut[i][j].piirra(graphics);
+//
+//    @Override
+//    protected void paintComponent(Graphics graphics) {
+//        super.paintComponent(graphics);
+//        for (int i = 0; i < this.leveys; i++) {
+//            for (int j = 0; j < this.korkeus; j++) {
+//                this.ruudut[i][j].piirra(graphics);
+//            }
+//        }
+//        hahmo.piirra(graphics);
+//        for (Laatikko laatikko : this.laatikot) {
+//            laatikko.piirra(graphics);
+//        }
+//    }
+    
+    public void draw(Graphics g) {
+        for(int i = 0; i < this.leveys; i++) {
+            for(int j = 0; j < this.korkeus; j++) {
+                this.ruudut[i][j].piirra(g);
             }
         }
-        hahmo.piirra(graphics);
-        for (Laatikko laatikko : this.laatikot) {
-            laatikko.piirra(graphics);
+        hahmo.piirra(g);
+        for(Laatikko laatikko : this.laatikot) {
+            laatikko.piirra(g);
         }
     }
 }
