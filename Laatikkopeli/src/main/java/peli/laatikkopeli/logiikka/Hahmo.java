@@ -22,4 +22,8 @@ public class Hahmo extends Peliolio {
     public String toString() {
         return "Olen ruudussa " + this.ruutu.toString();
     }
+    
+    public void update() {
+        
+    }
 }
