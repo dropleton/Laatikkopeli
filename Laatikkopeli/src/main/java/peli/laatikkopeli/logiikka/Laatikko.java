@@ -6,15 +6,20 @@ package peli.laatikkopeli.logiikka;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.net.URL;
+import javax.swing.ImageIcon;
 
 public class Laatikko extends Peliolio {
 //    private boolean onMaalissa;
+    private Image image;
 
     public Laatikko(int x, int y) {
         super(x, y);
-        URL polku = this.getClass().getResource(name);
-        
+        URL polku = this.getClass().getResource("");
+        ImageIcon icon = new ImageIcon(polku);
+        this.image = icon.getImage();
+        this.setImage(image);
 //        this.onMaalissa = false;
     }
     

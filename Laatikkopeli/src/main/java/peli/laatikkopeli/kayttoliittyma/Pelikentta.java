@@ -22,22 +22,28 @@ public class Pelikentta extends JPanel {
 
     private ArrayList laatikot = new ArrayList<>();
     private ArrayList maaliruudut = new ArrayList<>();
+    private ArrayList seinat = new ArrayList<>();
     private Hahmo hahmo;
     private int korkeus;
     private int leveys;
     private boolean lapi = false;
-    private String level
-            = "    ######\n"
-            + "    ##   #\n"
-            + "    ##$  #\n"
-            + "  ####  $##\n"
-            + "  ##  $ $ #\n"
-            + "#### # ## #   ######\n"
-            + "##   # ## #####  ..#\n"
-            + "## $  $          ..#\n"
-            + "###### ### #@##  ..#\n"
-            + "    ##     #########\n"
-            + "    ########\n";
+//    private String level
+//            = "    ######\n"
+//            + "    ##   #\n"
+//            + "    ##$  #\n"
+//            + "  ####  $##\n"
+//            + "  ##  $ $ #\n"
+//            + "#### # ## #   ######\n"
+//            + "##   # ## #####  ..#\n"
+//            + "## $  $          ..#\n"
+//            + "###### ### #@##  ..#\n"
+//            + "    ##     #########\n"
+//            + "    ########\n";
+    private String level 
+            = "#####\n"
+            + "#@  #\n"
+            + "# $ #\n"
+            + "#.. #\n";
 //    private int leveys;
 //    private int korkeus;
 //    private Ruutu[][] ruudut;
@@ -74,6 +80,7 @@ public class Pelikentta extends JPanel {
         int y = OFFSET;
 
         Laatikko l;
+        Seina s;
 
         for (int i = 0; i < this.level.length(); i++) {
             char tavara = level.charAt(i);
@@ -86,11 +93,14 @@ public class Pelikentta extends JPanel {
                     }   x += OFFSET;
                     break;
                 case '#':
-                    l = new Laatikko(x, y);
-                    this.laatikot.add(l);
+                    s = new Seina(x, y);
+                    this.seinat.add(s);
                     x += KOKO;
                     break;
                 case '$':
+                    l = new Laatikko(x, y);
+                    this.laatikot.add(l);
+                    x += KOKO;
                     break;
                 case '@':
                     hahmo = new Hahmo(x, y);
@@ -182,7 +192,7 @@ public class Pelikentta extends JPanel {
         }
 
         private boolean tormaakoSeinaan(Peliolio olio, int tyyppi) {
-
+            return false;
         }
 
         private boolean tormaakoLaatikkoon(int tyyppi) {

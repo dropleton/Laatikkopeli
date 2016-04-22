@@ -1,15 +1,14 @@
 package peli.laatikkopeli;
 
-import javax.swing.SwingUtilities;
 import peli.laatikkopeli.kayttoliittyma.*;
-import peli.laatikkopeli.logiikka.Ruutu;
-import peli.laatikkopeli.logiikka.Hahmo;
-import peli.laatikkopeli.logiikka.Laatikko;
 
 public class Main {
 
     public static void main(String[] args) {
-        Ikkuna ikkuna = new Ikkuna();
+        Kayttoliittyma liittyma = new Kayttoliittyma();
+        liittyma.setVisible(true);
+        
+//        Ikkuna ikkuna = new Ikkuna();
 
 //        Pelikentta kentta = new Pelikentta(8, 6);
 //        kentta.asetaMaaliruutu(1, 2);

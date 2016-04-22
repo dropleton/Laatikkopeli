@@ -7,4 +7,6 @@ Päivä | Tunnit | Kuvaus
 07.04.2016 | 4.5h | Luokan Laatikko teko, graafisen käyttöliittymän tekoa
 08.04.2016 | 4.5h | Luokkakaavion päivitys, ruudukon luominen pelikenttään, hahmon liikkumisen korjaamista, luokan Laatikko testausta, Checkstyle- ja pit-raporttien päivitys
 15.04.2016 | 6.5h | Turhien luokkien poisto, graafisen käyttöliittymän tekoa, Hahmon ja Laatikoiden lisääminen Pelikenttään satunnaisesti, JavaDocin aloitus, Checkstyle- ja Pit-raporttien päivitys
+21.04.2016 | 5h | Yksittäisten ruutujen toiminnan tutkimista Internetistä
+22.04.2016 | 5h | Koko käyttöjärjestelmän uudelleen muokkausta, Hahmo-, Laatikko-, ja Peliolio-luokkien muokkausta, luokkien Seinä ja Maaliruutu luominen, yritystä saada aikaan toimiva pelikenttä
 

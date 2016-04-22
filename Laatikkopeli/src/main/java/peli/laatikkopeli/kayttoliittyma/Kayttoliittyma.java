@@ -11,43 +11,57 @@ import javax.swing.*;
 import javax.swing.WindowConstants;
 import peli.laatikkopeli.logiikka.*;
 
-public class Kayttoliittyma extends JPanel implements Runnable {
-    int leveys = 800;
-    int korkeus = 800;
-    Dimension dim = new Dimension(leveys, korkeus);
+public class Kayttoliittyma extends JFrame {
+
+    private final int OFFSET = 30;
+
+    public Kayttoliittyma() {
+        initUI();
+    }
+
+    public void initUI() {
+        Pelikentta kentta = new Pelikentta();
+        add(kentta);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(kentta.getLeveys() + OFFSET, kentta.getKorkeus() + 2 * OFFSET);
+        setLocationRelativeTo(null);
+        setTitle("Sokoban");
+    }
+
+//    int leveys = 800;
+//    int korkeus = 800;
+//    Dimension dim = new Dimension(leveys, korkeus);
 //    private JPanel panel;
 //    private JFrame frame;
 //    private Hahmo hahmo;
 //    private Pelikentta kentta;
 //    private Laatikko laatikko;
-
-    public Kayttoliittyma() {
-        setPreferredSize(dim);
-        setBackground(Color.black);
-//        this.hahmo = hahmo;
-//        this.kentta = kentta;
-//        this.panel = new JPanel();
-    }
-
-    @Override
-    public void run() {
-        update();
-        repaint();
-//        frame = new JFrame("Peli");
-//        frame.setPreferredSize(new Dimension(kentta.getLeveys() * 100, kentta.getKorkeus() * 100));
+//    public Kayttoliittyma() {
+//        setPreferredSize(dim);
+//        setBackground(Color.black);
+////        this.hahmo = hahmo;
+////        this.kentta = kentta;
+////        this.panel = new JPanel();
+//    }
 //
-//        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//    @Override
+//    public void run() {
+//        update();
+//        repaint();
+////        frame = new JFrame("Peli");
+////        frame.setPreferredSize(new Dimension(kentta.getLeveys() * 100, kentta.getKorkeus() * 100));
+////
+////        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+////
+////        luoKomponentit(frame.getContentPane());
+////
+////        frame.pack();
+////        frame.setVisible(true);
+//    }
 //
-//        luoKomponentit(frame.getContentPane());
-//
-//        frame.pack();
-//        frame.setVisible(true);
-    }
-
-    private void luoKomponentit(Container container) {
-        
+//    private void luoKomponentit(Container container) {
 //        Pelikentta kentta = new Pelikentta(8,8);
-
 //        GridLayout ruudukko = new GridLayout(this.kentta.getKorkeus(), this.kentta.getLeveys());
 //        panel.setLayout(ruudukko);
 //        for (int i = 0; i < this.kentta.getLeveys(); i++) {
@@ -74,14 +88,11 @@ public class Kayttoliittyma extends JPanel implements Runnable {
 ////        frame.add(panel);
 //        container.add(this.panel);
 ////        frame.addKeyListener(new NappaimistonKuuntelija(this.hahmo, this.kentta));
-
-    }
-
+//    }
 //    public JFrame getFrame() {
 ////        return frame;
 //    }
-    
-    private void update() {
-        
-    }
+//    private void update() {
+//        
+//    }
 }

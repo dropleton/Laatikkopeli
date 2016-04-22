@@ -10,6 +10,7 @@ public class Peliolio {
     private int KOKO;
     private int x;
     private int y;
+    private Image image;
 
 //    protected Ruutu ruutu;
     public Peliolio(int x, int y) {
@@ -67,7 +68,11 @@ public class Peliolio {
     }
     
     public Image getImage() {
-        
+        return this.image;
+    }
+    
+    public void setImage(Image image) {
+        this.image = image;
     }
 
 //    public void liikuYlos() {
