@@ -9,4 +9,6 @@ Päivä | Tunnit | Kuvaus
 15.04.2016 | 6.5h | Turhien luokkien poisto, graafisen käyttöliittymän tekoa, Hahmon ja Laatikoiden lisääminen Pelikenttään satunnaisesti, JavaDocin aloitus, Checkstyle- ja Pit-raporttien päivitys
 21.04.2016 | 5h | Yksittäisten ruutujen toiminnan tutkimista Internetistä
 22.04.2016 | 5h | Koko käyttöjärjestelmän uudelleen muokkausta, Hahmo-, Laatikko-, ja Peliolio-luokkien muokkausta, luokkien Seinä ja Maaliruutu luominen, yritystä saada aikaan toimiva pelikenttä
+23.04.2016 | 5h | Tutoriaalien katsomista Youtubesta, minkä seurauksena projektin aloittaminen alusta projektinimellä TheBoxGame. 
+24.04.2016 | 5h | Pakkausten luomista, uusien luokkien tekoa, graafisen käyttöliittymän aloitus, yleinen iloisuus toimivasta ohjelmasta
 
