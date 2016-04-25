@@ -1,36 +1,43 @@
 package theboxgame.states;
 
 import java.awt.Graphics;
+import java.util.ArrayList;
 import theboxgame.entities.*;
 import theboxgame.theboxgame.Game;
 
 public class GameState extends State {
     private final Player player;
-    private final Box box;
+    private final ArrayList<Box> boxes;
     private final Goal goal;
-    private final Wall wall;
+    private final ArrayList<Wall> walls;
+    private final ArrayList entities;
     
     public GameState(Game game) {
         super(game);
+        this.entities = game.getEntities();
         this.player = game.getPlayer();
-        this.box = game.getBox();
+        this.boxes = game.getBoxes();
         this.goal = game.getGoal();
-        this.wall = game.getWall();
+        this.walls = game.getWalls();
     }
 
     @Override
     public void tick() {
-        this.player.tick();
-        this.box.tick();
-        this.goal.tick();
+//        this.player.tick();
+//        this.box.tick();
+//        this.goal.tick();
     }
 
     @Override
-    public void render(Graphics g) {
+    public void render(Graphics g) { 
         this.player.render(g);
-        this.box.render(g);
         this.goal.render(g);
-        this.wall.render(g);
+        for(Box box : this.boxes) {
+            box.render(g);
+        }
+        for(Wall wall : this.walls) {
+            wall.render(g);
+        }
     }
     
     

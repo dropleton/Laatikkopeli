@@ -25,59 +25,65 @@ public class Game implements Runnable {
     private State gameState;
 
     //Entities
-    private Player player;
-    private ArrayList<Box> boxes;
-    private Goal goal;
-    private ArrayList<Wall> walls;
+//    private Player player;
+//    private Box box;
+//    private Goal goal;
+//    private Wall wall;
     private ArrayList<Entity> entities;
+
+    private MovingLogic logic;
 
     private KeyManager keyManager;
 
     private Render render;
 
-    public Game(String title, int width, int height) {
+    private String map;
+
+    public Game(String title, int width, int height, String map) {
         this.width = width;
         this.height = height;
         this.title = title;
-        this.player = new Player(100, 100);
-        this.boxes = new ArrayList();
-        this.goal = new Goal(300, 200);
-        this.walls = new ArrayList();
+        this.map = map;
+        this.logic = new MovingLogic(width / Tile.TILEWIDTH, height / Tile.TILEHEIGHT, map);
+//        this.player = new Player(100, 100);
+//        this.box = new Box(100, 300);
+//        this.goal = new Goal(300, 200);
+//        this.wall = new Wall(200, 300);
         this.entities = new ArrayList();
-        this.keyManager = new KeyManager(this.player);
+//        this.keyManager = new KeyManager(this.logic);
+
     }
 
     private void init() {
-        setEntities();
+//        setEntities();
         this.display = new Display(title, width, height);
         this.display.getJFrame().addKeyListener(this.keyManager);
-        
+
         this.gameState = new GameState(this);
         CurrentState.setState(this.gameState);
     }
-    
-    private void setEntities() {
-        addEntities();
-        for(int i = 0; i < this.entities.size(); i++) {
-            for(int j = 0; j < this.entities.size(); j++) {
-//                if(this.entities.get(i).getX())
-            }
-        }
-    }
-    
-    private void addEntities() {
-        this.entities.add(this.player);
-        this.entities.add(this.goal);
-        
-        for(Box box : this.boxes) {
-            this.entities.add(box);
-        }
-        
-        for(Wall wall : this.walls) {
-            this.entities.add(wall);
-        }
-    }
 
+//    private void setEntities() {
+//        addEntities();
+//        for(int i = 0; i < this.entities.size(); i++) {
+//            for(int j = 0; j < this.entities.size(); j++) {
+////                if(this.entities.get(i).getX())
+//            }
+//        }
+//    }
+//    
+//    private void addEntities() {
+//        this.entities.add(this.player);
+//        this.entities.add(this.goal);
+//        
+//        for(Box box : this.boxes) {
+//            this.entities.add(box);
+//        }
+//        
+//        for(Wall wall : this.walls) {
+//            this.entities.add(wall);
+//        }
+//    }
     private void tick() {
         if (CurrentState.getState() != null) {
             CurrentState.getState().tick();
@@ -159,20 +165,23 @@ public class Game implements Runnable {
         }
     }
     
+    public ArrayList getEntities() {
+        return this.logic.getEntities();
+    }
+
     public Player getPlayer() {
-        return this.player;
+        return this.logic.getPlayer();
     }
     
-    public Box getBox() {
-        return this.box;
+    public ArrayList<Box> getBoxes() {
+        return this.logic.getBoxes();
     }
     
     public Goal getGoal() {
-        return this.goal;
+        return this.logic.getGoal();
     }
     
-    public Wall getWall() {
-        return this.wall;
+    public ArrayList<Wall> getWalls() {
+        return this.logic.getWalls();
     }
-    
 }

@@ -3,14 +3,12 @@ package theboxgame.entities;
 import java.awt.Graphics;
 
 public class Entity {
-    protected int x, y, width, height;
-    protected Entity up, down, left, right;
+    protected int x, y;
+    public static int width = 20, height = 20;
 
     public Entity(int x, int y) {
         this.x = x;
         this.y = y;
-        this.width = 20;
-        this.height = 20;
     }
     
     public void tick() {
@@ -29,19 +27,5 @@ public class Entity {
         return this.y;
     }
     
-    public void setUp(Entity entity) {
-        this.up = entity;
-    }
-    
-    public void setDown(Entity entity) {
-        this.down = entity;
-    }
-    
-    public void setLeft(Entity entity) {
-        this.left = entity;
-    }
-    
-    public void setRight(Entity entity) {
-        this.right = entity;
-    }
+
 }
