@@ -3,9 +3,9 @@ package theboxgame.entities;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Box extends Movable {
+public class Wall extends Entity {
 
-    public Box(int x, int y) {
+    public Wall(int x, int y) {
         super(x, y);
     }
 
@@ -16,11 +16,8 @@ public class Box extends Movable {
 
     @Override
     public void render(Graphics g) {
-        g.clearRect(x, y, width, height);
-        g.setColor(Color.gray);
+        g.setColor(Color.black);
         g.fillRect(x, y, width, height);
-
     }
-    
     
 }

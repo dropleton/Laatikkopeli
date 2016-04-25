@@ -2,6 +2,7 @@ package theboxgame.theboxgame;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.util.ArrayList;
 import java.util.logging.*;
 import theboxgame.display.Display;
 import theboxgame.entities.*;
@@ -23,9 +24,12 @@ public class Game implements Runnable {
 
     private State gameState;
 
+    //Entities
     private Player player;
-    private Box box;
+    private ArrayList<Box> boxes;
     private Goal goal;
+    private ArrayList<Wall> walls;
+    private ArrayList<Entity> entities;
 
     private KeyManager keyManager;
 
@@ -36,17 +40,42 @@ public class Game implements Runnable {
         this.height = height;
         this.title = title;
         this.player = new Player(100, 100);
-        this.box = new Box(200, 200);
+        this.boxes = new ArrayList();
         this.goal = new Goal(300, 200);
+        this.walls = new ArrayList();
+        this.entities = new ArrayList();
         this.keyManager = new KeyManager(this.player);
     }
 
     private void init() {
+        setEntities();
         this.display = new Display(title, width, height);
         this.display.getJFrame().addKeyListener(this.keyManager);
         
         this.gameState = new GameState(this);
         CurrentState.setState(this.gameState);
+    }
+    
+    private void setEntities() {
+        addEntities();
+        for(int i = 0; i < this.entities.size(); i++) {
+            for(int j = 0; j < this.entities.size(); j++) {
+//                if(this.entities.get(i).getX())
+            }
+        }
+    }
+    
+    private void addEntities() {
+        this.entities.add(this.player);
+        this.entities.add(this.goal);
+        
+        for(Box box : this.boxes) {
+            this.entities.add(box);
+        }
+        
+        for(Wall wall : this.walls) {
+            this.entities.add(wall);
+        }
     }
 
     private void tick() {
@@ -140,6 +169,10 @@ public class Game implements Runnable {
     
     public Goal getGoal() {
         return this.goal;
+    }
+    
+    public Wall getWall() {
+        return this.wall;
     }
     
 }
