@@ -8,18 +8,28 @@ public class Goal extends Entity {
 
     public Goal(int x, int y) {
         super(x, y);
-        this.id = 3;
+        this.id = 4;
     }
 
     @Override
     public void tick() {
 
     }
+    
+    @Override
+    public int getId() {
+        return this.id;
+    }
 
     @Override
     public void render(Graphics g) {
         g.setColor(Color.green);
         g.fillRect(x, y, width, height);
+    }
+    
+    @Override
+    public String toString() {
+        return "Goal";
     }
     
 }

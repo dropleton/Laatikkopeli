@@ -1,5 +1,6 @@
 package theboxgame.entities;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Player extends Movable{
@@ -7,9 +8,10 @@ public class Player extends Movable{
     
     public Player(int x, int y) {
         super(x, y);
-        this.id = 0;
+        this.id = 2;
     }
     
+    @Override
     public int getId() {
         return this.id;
     }
@@ -21,7 +23,13 @@ public class Player extends Movable{
 
     @Override
     public void render(Graphics g) {
-        g.clearRect(0, 0, 400, 400);
-        g.drawRect(x, y, width, height);
+//        g.clearRect(0, 0, 400, 400);
+        g.setColor(Color.red);
+        g.fillRect(x, y, width, height);
+    }
+    
+    @Override
+    public String toString() {
+        return "Player";
     }
 }

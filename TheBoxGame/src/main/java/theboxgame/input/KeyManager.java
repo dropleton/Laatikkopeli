@@ -2,13 +2,14 @@ package theboxgame.input;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import theboxgame.entities.Player;
+import theboxgame.logic.MovingLogic;
 
 public class KeyManager implements KeyListener {
-    private Player player;
-    
-    public KeyManager(Player player) {
-        this.player = player;
+
+    private MovingLogic logic;
+
+    public KeyManager(MovingLogic logic) {
+        this.logic = logic;
     }
 
     @Override
@@ -20,27 +21,26 @@ public class KeyManager implements KeyListener {
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP:
-                this.player.moveUp();
+                this.logic.playerMoveUp();
                 break;
             case KeyEvent.VK_DOWN:
-                this.player.moveDown();
+                this.logic.playerMoveDown();
                 break;
             case KeyEvent.VK_RIGHT:
-                this.player.moveRight();
+                this.logic.playerMoveRight();
                 break;
             case KeyEvent.VK_LEFT:
-                this.player.moveLeft();
+                this.logic.playerMoveLeft();
                 break;
             default:
                 break;
         }
-        
+
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
 
     }
-    
-    
+
 }

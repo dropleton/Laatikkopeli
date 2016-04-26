@@ -8,7 +8,7 @@ public class Box extends Movable {
 
     public Box(int x, int y) {
         super(x, y);
-        this.id = 2;
+        this.id = 3;
     }
 
     @Override
@@ -19,9 +19,19 @@ public class Box extends Movable {
     @Override
     public void render(Graphics g) {
 //        g.clearRect(x, y, width, height);
-//        g.setColor(Color.gray);
-//        g.fillRect(x, y, width, height);
+        g.setColor(Color.gray);
+        g.fillRect(x, y, width, height);
 
+    }
+    
+    @Override
+    public int getId() {
+        return this.id;
+    }
+    
+    @Override
+    public String toString() {
+        return "Box";
     }
     
     
