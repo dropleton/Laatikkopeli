@@ -121,9 +121,16 @@ public class Game implements Runnable {
                 timer = 0;
             }
 
+            if (this.logic.isCompleted()) {
+                complete();
+            }
         }
-
         stop();
+    }
+
+    public void complete() {
+        char[] complete = {'c', 'o', 'm', 'p', 'l', 'e', 't', 'e'};
+        g.drawChars(complete, 0, complete.length, 10, 30);
     }
 
     public synchronized void start() {
@@ -145,7 +152,7 @@ public class Game implements Runnable {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public ArrayList getEntities() {
         return this.world.getEntities();
     }
@@ -153,20 +160,20 @@ public class Game implements Runnable {
     public Player getPlayer() {
         return this.world.getPlayer();
     }
-    
+
     public ArrayList<Box> getBoxes() {
         return this.world.getBoxes();
     }
-    
+
     public Goal getGoal() {
         return this.world.getGoal();
     }
-    
+
     public ArrayList<Wall> getWalls() {
         return this.world.getWalls();
     }
-    
+
     public ArrayList<Entity> getEmpties() {
         return this.world.getEmpties();
-    }   
+    }
 }

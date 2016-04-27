@@ -1,5 +1,6 @@
 package theboxgame.entities;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Entity {
@@ -19,6 +20,7 @@ public class Entity {
     }
     
     public void render(Graphics g) {
+        g.setColor(Color.GRAY);
         g.clearRect(x, y, width, height);
     }
     
