@@ -3,6 +3,7 @@ package theboxgame.states;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import theboxgame.entities.*;
+import theboxgame.theboxgame.Complete;
 import theboxgame.theboxgame.Game;
 
 public class GameState extends State {
@@ -13,6 +14,7 @@ public class GameState extends State {
     private final ArrayList<Wall> walls;
     private final ArrayList<Entity> empties;
     private final ArrayList entities;
+    private final Complete complete;
 
     public GameState(Game game) {
         super(game);
@@ -22,6 +24,7 @@ public class GameState extends State {
         this.goal = game.getGoal();
         this.walls = game.getWalls();
         this.empties = game.getEmpties();
+        this.complete = game.getComplete();
     }
 
     @Override
@@ -44,6 +47,7 @@ public class GameState extends State {
         }
         this.goal.render(g);
         this.player.render(g);
+        this.complete.render(g);
     }
 
 }

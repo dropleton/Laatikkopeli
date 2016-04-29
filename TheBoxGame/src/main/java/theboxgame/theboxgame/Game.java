@@ -25,20 +25,13 @@ public class Game implements Runnable {
 
     private State gameState;
 
-    //Entities
-//    private Player player;
-//    private Box box;
-//    private Goal goal;
-//    private Wall wall;
-    private ArrayList<Entity> entities;
-
     private World world;
     private MovingLogic logic;
     private KeyManager manager;
 
-    private Render render;
-
     private String map;
+
+    private Complete c;
 
     public Game(String title, int width, int height, String map) {
         this.width = width;
@@ -46,14 +39,9 @@ public class Game implements Runnable {
         this.title = title;
         this.map = map;
         this.world = new World(width / Tile.TILEWIDTH, height / Tile.TILEHEIGHT, map);
-//        this.player = new Player(100, 100);
-//        this.box = new Box(100, 300);
-//        this.goal = new Goal(300, 200);
-//        this.wall = new Wall(200, 300);
-        this.entities = new ArrayList();
         this.logic = new MovingLogic(this.world.getPlayer(), this.world.getWalls(), this.world.getBoxes(), this.world.getEmpties());
         this.manager = new KeyManager(this.logic);
-
+        this.c = new Complete();
     }
 
     private void init() {
@@ -99,8 +87,6 @@ public class Game implements Runnable {
         long timer = 0;
         int ticks = 0;
 
-        this.render = new Render();
-
         while (running) {
             now = System.nanoTime();
             delta += (now - lastTime) / timePerTick;
@@ -109,28 +95,26 @@ public class Game implements Runnable {
 
             if (delta >= 1) {
                 tick();
-//            this.render.render(this.display, this.width, this.height);
                 render();
                 ticks++;
                 delta--;
             }
 
             if (timer >= 1000000000) {
-                System.out.println("Ticks and frames: " + ticks);
-                ticks = 0;
-                timer = 0;
+                if (this.c.getComplete()) {
+                    stop();
+                } else {
+                    System.out.println("Ticks and frames: " + ticks);
+                    ticks = 0;
+                    timer = 0;
+                }
             }
 
             if (this.logic.isCompleted()) {
-                complete();
+                this.c.setComplete();
             }
         }
-        stop();
-    }
 
-    public void complete() {
-        char[] complete = {'c', 'o', 'm', 'p', 'l', 'e', 't', 'e'};
-        g.drawChars(complete, 0, complete.length, 10, 30);
     }
 
     public synchronized void start() {
@@ -175,5 +159,9 @@ public class Game implements Runnable {
 
     public ArrayList<Entity> getEmpties() {
         return this.world.getEmpties();
+    }
+
+    public Complete getComplete() {
+        return this.c;
     }
 }

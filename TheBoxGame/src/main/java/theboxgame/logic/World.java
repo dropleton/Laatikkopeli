@@ -76,7 +76,7 @@ public class World {
                         this.empties.add(empty);
                         i++;
                         break;
-                    case '0':
+                    case '2':
                         this.player = new Player(i * Tile.TILEWIDTH, j * Tile.TILEHEIGHT);
                         this.tiles[i][j].setEntity(player);
                         this.player.setTile(this.tiles[i][j]);
@@ -91,7 +91,7 @@ public class World {
                         this.entities.add(wall);
                         i++;
                         break;
-                    case '2':
+                    case '3':
                         Box box = new Box(i * Tile.TILEWIDTH, j * Tile.TILEHEIGHT);
                         this.tiles[i][j].setEntity(box);
                         box.setTile(this.tiles[i][j]);
@@ -99,7 +99,7 @@ public class World {
                         this.boxes.add(box);
                         i++;
                         break;
-                    case '3':
+                    case '4':
                         this.goal = new Goal(i * Tile.TILEWIDTH, j * Tile.TILEHEIGHT);
                         this.tiles[i][j].setEntity(goal);
                         this.goal.setTile(this.tiles[i][j]);
@@ -112,21 +112,8 @@ public class World {
 
             }
         }
-        printWorld();
     }
-
-    public void printWorld() {
-        for (int i = 0; i < this.width; i++) {
-            for (int j = 0; j < this.height; j++) {
-                System.out.println(this.tiles[i][j] + " " + this.tiles[i][j].getEntity());
-//                System.out.println("Yla " + this.tiles[i][j].getUp() + " " + this.tiles[i][j].getEntity());
-//                System.out.println("Ala " + this.tiles[i][j].getDown() + " " + this.tiles[i][j].getEntity());
-//                System.out.println("Vasen " + this.tiles[i][j].getLeft() + " " + this.tiles[i][j].getEntity());
-//                System.out.println("Oikea " + this.tiles[i][j].getRight() + " " + this.tiles[i][j].getEntity());
-            }
-        }
-    }
-
+    
     public ArrayList getEntities() {
         return this.entities;
     }
