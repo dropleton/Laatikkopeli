@@ -25,11 +25,6 @@ public class Movable extends Entity {
     }
 
     @Override
-    public void tick() {
-
-    }
-
-    @Override
     public void render(Graphics g) {
 
     }

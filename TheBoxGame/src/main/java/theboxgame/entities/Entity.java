@@ -14,11 +14,7 @@ public class Entity {
         this.y = y;
         this.id = 0;
     }
-    
-    public void tick() {
-        
-    }
-    
+
     public void render(Graphics g) {
         g.setColor(Color.GRAY);
         g.clearRect(x, y, width, height);

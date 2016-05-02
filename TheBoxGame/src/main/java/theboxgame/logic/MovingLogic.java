@@ -46,10 +46,6 @@ public class MovingLogic {
         return false;
     }
 
-    public Player getPlayer() {
-        return this.player;
-    }
-
     public void playerMoveUp() {
         if (this.player.getTile().getUp() != null) {
             if (!wallCollisions.collisionToWallUp(this.player)) {

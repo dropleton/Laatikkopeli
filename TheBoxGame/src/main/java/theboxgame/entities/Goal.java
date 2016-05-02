@@ -10,11 +10,6 @@ public class Goal extends Entity {
         super(x, y);
         this.id = 4;
     }
-
-    @Override
-    public void tick() {
-
-    }
     
     @Override
     public int getId() {

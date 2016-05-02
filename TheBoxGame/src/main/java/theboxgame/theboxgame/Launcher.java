@@ -1,9 +1,9 @@
 package theboxgame.theboxgame;
 
 public class Launcher {
-    
-    public static void main(String[]  args) {
-        String map 
+
+    public static void main(String[] args) {
+        String map
                 = "11111111           \n"
                 + "1  1   1           \n"
                 + "1   3  1           \n"
@@ -26,6 +26,6 @@ public class Launcher {
                 + "                   \n";
         Game game = new Game("TheBoxGame!", 400, 400, map);
         game.start();
-        
+
     }
 }

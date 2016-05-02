@@ -12,15 +12,9 @@ public class Wall extends Entity {
     }
 
     @Override
-    public void tick() {
-
-    }
-
-    @Override
     public void render(Graphics g) {
         g.setColor(Color.black);
         g.fillRect(x, y, width, height);
-//        System.out.println(this.x + "," + this.y);
     }
     
     @Override

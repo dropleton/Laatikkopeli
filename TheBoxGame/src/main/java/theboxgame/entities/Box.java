@@ -12,13 +12,7 @@ public class Box extends Movable {
     }
 
     @Override
-    public void tick() {
-
-    }
-
-    @Override
     public void render(Graphics g) {
-//        g.clearRect(x, y, width, height);
         g.setColor(Color.gray);
         g.fillRect(x, y, width, height);
 

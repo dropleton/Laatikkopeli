@@ -45,18 +45,11 @@ public class Game implements Runnable {
     }
 
     private void init() {
-//        setEntities();
         this.display = new Display(title, width, height);
         this.display.getJFrame().addKeyListener(this.manager);
 
         this.gameState = new GameState(this);
         CurrentState.setState(this.gameState);
-    }
-
-    private void tick() {
-        if (CurrentState.getState() != null) {
-            CurrentState.getState().tick();
-        }
     }
 
     private void render() {
@@ -94,7 +87,6 @@ public class Game implements Runnable {
             lastTime = now;
 
             if (delta >= 1) {
-                tick();
                 render();
                 ticks++;
                 delta--;
@@ -135,10 +127,6 @@ public class Game implements Runnable {
         } catch (InterruptedException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    public ArrayList getEntities() {
-        return this.world.getEntities();
     }
 
     public Player getPlayer() {

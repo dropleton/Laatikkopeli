@@ -15,15 +15,9 @@ public class Player extends Movable{
     public int getId() {
         return this.id;
     }
-    
-    @Override
-    public void tick() {
-
-    }
 
     @Override
     public void render(Graphics g) {
-//        g.clearRect(0, 0, 400, 400);
         g.setColor(Color.red);
         g.fillRect(x, y, width, height);
     }
