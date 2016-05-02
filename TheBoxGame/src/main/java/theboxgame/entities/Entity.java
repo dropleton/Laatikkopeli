@@ -1,3 +1,7 @@
+/**
+ * Luokka sisältää kaikkien peliolioiden eli Entityjen tarvitsemat toiminnallisuudet. 
+ */
+
 package theboxgame.entities;
 
 import java.awt.Color;
@@ -14,7 +18,12 @@ public class Entity {
         this.y = y;
         this.id = 0;
     }
-
+    
+    /**
+     * Metodi piirtää tyhjän ruudun.
+     * 
+     * @param g Luokasta peli saatu Graphics-olion ilmentymä
+     */
     public void render(Graphics g) {
         g.setColor(Color.GRAY);
         g.clearRect(x, y, width, height);

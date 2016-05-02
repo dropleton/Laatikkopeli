@@ -1,3 +1,7 @@
+/**
+ * Luokka huolehtii Complete-tekstin piirtämisestä pelin päätyttyä.
+ */
+
 package theboxgame.theboxgame;
 
 import java.awt.Graphics;

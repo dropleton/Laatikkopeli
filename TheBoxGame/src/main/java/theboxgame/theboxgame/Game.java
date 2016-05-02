@@ -1,3 +1,7 @@
+/**
+ * Luokka sisältää gameloopin ja muut pelin pyörittämiseen tarvittavat metodit.
+ */
+
 package theboxgame.theboxgame;
 
 import theboxgame.logic.*;
@@ -68,6 +72,10 @@ public class Game implements Runnable {
         g.dispose();
     }
 
+    /**
+     * Metodi sisältää pelin pyörittämisen lisäksi pelin uudelleenpiirtämisen
+     * rajoittamisen, ettei peliä piirretä turhaan liian usein uusiksi.
+     */
     @Override
     public void run() {
         init();
@@ -109,6 +117,9 @@ public class Game implements Runnable {
 
     }
 
+    /**
+     * Metodi käynnistää pelin.
+     */
     public synchronized void start() {
         if (running) {
             return;
@@ -117,7 +128,9 @@ public class Game implements Runnable {
         this.thread = new Thread(this);
         this.thread.start();
     }
-
+    /**
+     * Metodi lopettaa pelin.
+     */
     public synchronized void stop() {
         if (!running) {
             return;

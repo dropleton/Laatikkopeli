@@ -1,3 +1,8 @@
+/**
+ * Luokka implementoi näppäimistön kuunteluun tarvittavan KeyListener-luokan sekä
+ * liikkumislogiikkaan tarvittavan MovingLogic-luokan.
+ */
+
 package theboxgame.input;
 
 import java.awt.event.KeyEvent;

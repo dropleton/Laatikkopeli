@@ -1,3 +1,7 @@
+/**
+ * Luokka sisältää Movablejen liikuttamiseen tarvittavan logiikan tarkastuksineen.
+ */
+
 package theboxgame.logic;
 
 import java.util.ArrayList;
@@ -38,7 +42,10 @@ public class MovingLogic {
             this.empties.add(empty);
         }
     }
-
+/**
+ * Metodi tarkistaa, ovatko kaikki laatikot maaliruudussa, eli onko peli suoritettu.
+ * @return Totuusarvomuuttuja, ovatko kaikki laatikot maalissa vai eivät
+ */
     public boolean isCompleted() {
         if(this.boxesLeft <= 0) {
             return true;
@@ -46,6 +53,11 @@ public class MovingLogic {
         return false;
     }
 
+    /**
+     * Metodi siirtää pelaajaa yhden ruudun ylöspäin, jos yläpuolinen ruutu ei ole seinä
+     * tai jos yläpuolisen ruudun ollessa laatikko laatikon yläpuolinen ruutu ei ole seinä
+     * eikä laatikko.
+     */
     public void playerMoveUp() {
         if (this.player.getTile().getUp() != null) {
             if (!wallCollisions.collisionToWallUp(this.player)) {
@@ -62,7 +74,11 @@ public class MovingLogic {
             }
         }
     }
-
+    /**
+     * Metodi siirtää pelaajaa yhden ruudun alaspäin, jos alapuolinen ruutu ei ole seinä
+     * tai jos alapuolisen ruudun ollessa laatikko laatikon alapuolinen ruutu ei ole seinä
+     * eikä laatikko.
+     */
     public void playerMoveDown() {
         if (this.player.getTile().getDown() != null) {
             if (!wallCollisions.collisionToWallDown(this.player)) {
@@ -79,7 +95,11 @@ public class MovingLogic {
             }
         }
     }
-
+    /**
+     * Metodi siirtää pelaajaa yhden ruudun vasemmalle, jos vasemmanpuolinen ruutu ei ole seinä
+     * tai jos vasemmanpuolisen ruudun ollessa laatikko laatikon vasemmanpuolinen ruutu ei ole seinä
+     * eikä laatikko.
+     */
     public void playerMoveLeft() {
         if (this.player.getTile().getLeft() != null) {
             if (!wallCollisions.collisionToWallLeft(this.player)) {
@@ -96,7 +116,11 @@ public class MovingLogic {
             }
         }
     }
-
+    /**
+     * Metodi siirtää pelaajaa yhden ruudun oikealle, jos oikeanpuolinen ruutu ei ole seinä
+     * tai jos oikeanpuolisen ruudun ollessa laatikko laatikon oikeanpuolinen ruutu ei ole seinä
+     * eikä laatikko.
+     */
     public void playerMoveRight() {
         if (this.player.getTile().getRight() != null) {
             if (!wallCollisions.collisionToWallRight(this.player)) {
@@ -113,7 +137,9 @@ public class MovingLogic {
             }
         }
     }
-
+/**
+ * Metodi siirtää laatikkoa ylöspäin, jos laatikko ei törmää seinään tai toiseen laatikkoon.
+ */
     public void moveBoxUp() {
         if (this.player.getTile().getUp().getEntity().getId() == 3) {
             for (Box box : this.boxes) {
@@ -133,6 +159,9 @@ public class MovingLogic {
         }
     }
 
+/**
+ * Metodi siirtää laatikkoa alaspäin, jos laatikko ei törmää seinään tai toiseen laatikkoon.
+ */
     public void moveBoxDown() {
         if (this.player.getTile().getDown().getEntity().getId() == 3) {
             for (Box box : this.boxes) {
@@ -152,6 +181,9 @@ public class MovingLogic {
         }
     }
 
+/**
+ * Metodi siirtää laatikkoa vasemmalle, jos laatikko ei törmää seinään tai toiseen laatikkoon.
+ */
     public void moveBoxLeft() {
         if (this.player.getTile().getLeft().getEntity().getId() == 3) {
             for (Box box : this.boxes) {
@@ -171,6 +203,9 @@ public class MovingLogic {
         }
     }
 
+/**
+ * Metodi siirtää laatikkoa oikealle, jos laatikko ei törmää seinään tai toiseen laatikkoon.
+ */
     public void moveBoxRight() {
         if (this.player.getTile().getRight().getEntity().getId() == 3) {
             for (Box box : this.boxes) {
@@ -189,7 +224,12 @@ public class MovingLogic {
             }
         }
     }
-
+    
+/**
+ * Metodi tarkistaa, onko laatikko maaliruudussa.
+ * @param box Kutsujametodilta saatu laatikko
+ * @return Totuusarvomuuttuja, kertoo onko laatikko maalissa vai ei
+ */
     public boolean isBoxInGoal(Box box) {
         if (box.getTile().getEntity().getId() == 4) {
             box = null;

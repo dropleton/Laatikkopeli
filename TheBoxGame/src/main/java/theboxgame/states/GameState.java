@@ -1,3 +1,7 @@
+/**
+ * Luokka saa luokan Game kautta luokan World sisältämät Entityt ja suorittaa
+ * niiden piirtämisen render()-metodissa.
+ */
 package theboxgame.states;
 
 import java.awt.Graphics;

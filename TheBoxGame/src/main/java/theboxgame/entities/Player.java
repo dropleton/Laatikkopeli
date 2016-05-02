@@ -1,3 +1,7 @@
+/**
+ * Luokka perii luokalta Movable liikkumiseen tarvittavat ominaisuudet. 
+ */
+
 package theboxgame.entities;
 
 import java.awt.Color;

@@ -1,3 +1,7 @@
+/**
+ * Luokka kertoo tämänhetkisen Staten (eli tällä hetkellä aina GameStaten).
+ */
+
 package theboxgame.states;
 
 public class CurrentState {

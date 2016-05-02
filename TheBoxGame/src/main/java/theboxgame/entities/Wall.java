@@ -1,3 +1,7 @@
+/**
+ * Luokka perii luokalta Entity tarvitsemansa ominaisuudet.
+ */
+
 package theboxgame.entities;
 
 import java.awt.Color;
