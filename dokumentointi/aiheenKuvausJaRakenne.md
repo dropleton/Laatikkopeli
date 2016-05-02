@@ -8,11 +8,8 @@ Ohjelman käynnistyessä avautuu pelikenttä, jossa on laatikoita, esteitä ja p
 
 **Kaikkien käyttäjien toiminnot:**
 
-- Pelin aloittaminen "Play"-nappia painamalla
 - Pelin pelaaminen
-- Pelin keskeytys "Give up"-nappia painamalla
-- Pelin pelaaminen uudelleen "Try again"-nappia painamalla
-- Pelin lopetus ja ohjelman sulkeminen "Close"-nappia painamalla
+- Pelin lopetus ja ohjelman sulkeminen Close-nappia painamalla
 
 **Luokkakaavio:**
 

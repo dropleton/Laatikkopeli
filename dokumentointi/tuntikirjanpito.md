@@ -11,4 +11,9 @@ Päivä | Tunnit | Kuvaus
 22.04.2016 | 5h | Koko käyttöjärjestelmän uudelleen muokkausta, Hahmo-, Laatikko-, ja Peliolio-luokkien muokkausta, luokkien Seinä ja Maaliruutu luominen, yritystä saada aikaan toimiva pelikenttä
 23.04.2016 | 5h | Tutoriaalien katsomista Youtubesta, minkä seurauksena projektin aloittaminen alusta projektinimellä TheBoxGame. 
 24.04.2016 | 5h | Pakkausten luomista, uusien luokkien tekoa, graafisen käyttöliittymän aloitus, yleinen iloisuus toimivasta ohjelmasta
+25.04.2016 | 5h | Boxien ja Playerin liikkumisen aloitusta
+26.04.2016 | 5h | Kartan tuominen graafiseen käyttöliittymään, liikkumisen säätämistä
+27.04.2016 | 5h | Valmis graafinen käyttöliittymä, poislukien laatikoiden katoaminen maaliruudussa. Liikutettavien Entityjen lähtöruudun väri jostain syystä aina punainen
+29.04.2016 | 4h | Laatikot katoavat maaliruudussa, lähtöruutujen väri vielä korjaamatta. Pelin lopetus lisätty, pitin kanssa tuskailua
+02.05.2016 | 3,5h | Luokkien siistintää, uusi luokkakaavio, pitin kanssa tuskailua
 
