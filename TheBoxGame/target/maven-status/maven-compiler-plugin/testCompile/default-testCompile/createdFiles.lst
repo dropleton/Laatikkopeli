@@ -1,1 +1,7 @@
+theboxgame/entities/WallTest.class
+theboxgame/entities/PlayerTest.class
 theboxgame/entities/EntityTest.class
+theboxgame/entities/GoalTest.class
+theboxgame/entities/TileTest.class
+theboxgame/entities/BoxTest.class
+theboxgame/entities/MovableTest.class

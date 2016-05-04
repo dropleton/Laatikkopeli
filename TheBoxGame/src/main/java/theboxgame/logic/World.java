@@ -1,13 +1,13 @@
 /**
  * Luokka sisaltaa kaikki Entity-oliot ja Tilet, sekä hoitaa pelikentän muodostamisen.
  */
-
 package theboxgame.logic;
 
 import java.util.ArrayList;
 import theboxgame.entities.*;
 
 public class World {
+
     private Tile[][] tiles;
     private int width;
     private int height;
@@ -28,10 +28,10 @@ public class World {
         setTiles();
         setEntities(map);
     }
-    
+
     /**
      * Metodi luo kaksiulotteiseen Tilearrayhin tarvittavat Tilet.
-     * 
+     *
      */
     private void createTiles() {
         for (int i = 0; i < this.width; i++) {
@@ -43,7 +43,8 @@ public class World {
     }
 
     /**
-     * Metodi asettaa jokaiselle Tilelle sen ylä-, ala-, oikean- ja vasemmanpuoleisen Tilen.
+     * Metodi asettaa jokaiselle Tilelle sen ylä-, ala-, oikean- ja
+     * vasemmanpuoleisen Tilen.
      */
     private void setTiles() {
         for (int i = 0; i < this.width; i++) {
@@ -64,9 +65,10 @@ public class World {
         }
         System.out.println("SetTiles done");
     }
-    
+
     /**
      * Metodi asettaa jokaiseen Tileen kartan mukaisen Entityn.
+     *
      * @param map Luokan Game kautta saatu pelikentän kartta
      */
     private void setEntities(String map) {

@@ -1,7 +1,6 @@
 /**
  * Luokka sisältää gameloopin ja muut pelin pyörittämiseen tarvittavat metodit.
  */
-
 package theboxgame.theboxgame;
 
 import theboxgame.logic.*;
@@ -128,6 +127,7 @@ public class Game implements Runnable {
         this.thread = new Thread(this);
         this.thread.start();
     }
+
     /**
      * Metodi lopettaa pelin.
      */

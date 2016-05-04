@@ -12,11 +12,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author jetolvan
- */
 public class EntityTest {
+    Entity entity;
+    
+    @Before
+    public void setUp() {
+        entity = new Entity(20, 30);
+    }
     
     public EntityTest() {
     }
@@ -28,18 +30,26 @@ public class EntityTest {
     @AfterClass
     public static void tearDownClass() {
     }
-    
-    @Before
-    public void setUp() {
-    }
-    
+
     @After
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void constructorSetsValuesRight() {
+        assertEquals(entity.toString(), "(20 30)");
+        assertEquals(entity.getId(), 0);
+    }
+    
+    @Test
+    public void setTileSetsTheTile() {
+        Tile tile = new Tile(20, 30);
+        entity.setTile(tile);
+        assertEquals(entity.getTile().toString(), "20,30");
+    }
+    
+    @Test
+    public void setTileDoesntSetWrongTile() {
+        
+    }
 }

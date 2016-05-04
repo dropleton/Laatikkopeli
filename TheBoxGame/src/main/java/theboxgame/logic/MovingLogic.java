@@ -1,7 +1,6 @@
 /**
  * Luokka sisältää Movablejen liikuttamiseen tarvittavan logiikan tarkastuksineen.
  */
-
 package theboxgame.logic;
 
 import java.util.ArrayList;
@@ -42,27 +41,30 @@ public class MovingLogic {
             this.empties.add(empty);
         }
     }
-/**
- * Metodi tarkistaa, ovatko kaikki laatikot maaliruudussa, eli onko peli suoritettu.
- * @return Totuusarvomuuttuja, ovatko kaikki laatikot maalissa vai eivät
- */
+
+    /**
+     * Metodi tarkistaa, ovatko kaikki laatikot maaliruudussa, eli onko peli
+     * suoritettu.
+     *
+     * @return Totuusarvomuuttuja, ovatko kaikki laatikot maalissa vai eivät
+     */
     public boolean isCompleted() {
-        if(this.boxesLeft <= 0) {
+        if (this.boxesLeft <= 0) {
             return true;
         }
         return false;
     }
 
     /**
-     * Metodi siirtää pelaajaa yhden ruudun ylöspäin, jos yläpuolinen ruutu ei ole seinä
-     * tai jos yläpuolisen ruudun ollessa laatikko laatikon yläpuolinen ruutu ei ole seinä
-     * eikä laatikko.
+     * Metodi siirtää pelaajaa yhden ruudun ylöspäin, jos yläpuolinen ruutu ei
+     * ole seinä tai jos yläpuolisen ruudun ollessa laatikko laatikon
+     * yläpuolinen ruutu ei ole seinä eikä laatikko.
      */
     public void playerMoveUp() {
         if (this.player.getTile().getUp() != null) {
-            if (!wallCollisions.collisionToWallUp(this.player)) {
+            if (!wallCollisions.isAboveAWall(this.player)) {
                 if (boxCollisions.isAboveABox(player)) {
-                    if (!(boxCollisions.isAboveABox(player.getTile().getUp().getEntity()) || wallCollisions.collisionToWallUp(player.getTile().getUp().getEntity()))) {
+                    if (!(boxCollisions.isAboveABox(player.getTile().getUp().getEntity()) || wallCollisions.isAboveAWall(player.getTile().getUp().getEntity()))) {
                         this.player.moveUp();
                         moveBoxUp();
                         this.player.setTile(this.player.getTile().getUp());
@@ -74,16 +76,17 @@ public class MovingLogic {
             }
         }
     }
+
     /**
-     * Metodi siirtää pelaajaa yhden ruudun alaspäin, jos alapuolinen ruutu ei ole seinä
-     * tai jos alapuolisen ruudun ollessa laatikko laatikon alapuolinen ruutu ei ole seinä
-     * eikä laatikko.
+     * Metodi siirtää pelaajaa yhden ruudun alaspäin, jos alapuolinen ruutu ei
+     * ole seinä tai jos alapuolisen ruudun ollessa laatikko laatikon
+     * alapuolinen ruutu ei ole seinä eikä laatikko.
      */
     public void playerMoveDown() {
         if (this.player.getTile().getDown() != null) {
-            if (!wallCollisions.collisionToWallDown(this.player)) {
+            if (!wallCollisions.isUnderAWall(this.player)) {
                 if (boxCollisions.isUnderABox(player)) {
-                    if (!(boxCollisions.isUnderABox(player.getTile().getDown().getEntity()) || wallCollisions.collisionToWallDown(player.getTile().getDown().getEntity()))) {
+                    if (!(boxCollisions.isUnderABox(player.getTile().getDown().getEntity()) || wallCollisions.isUnderAWall(player.getTile().getDown().getEntity()))) {
                         this.player.moveDown();
                         moveBoxDown();
                         this.player.setTile(this.player.getTile().getDown());
@@ -95,16 +98,17 @@ public class MovingLogic {
             }
         }
     }
+
     /**
-     * Metodi siirtää pelaajaa yhden ruudun vasemmalle, jos vasemmanpuolinen ruutu ei ole seinä
-     * tai jos vasemmanpuolisen ruudun ollessa laatikko laatikon vasemmanpuolinen ruutu ei ole seinä
-     * eikä laatikko.
+     * Metodi siirtää pelaajaa yhden ruudun vasemmalle, jos vasemmanpuolinen
+     * ruutu ei ole seinä tai jos vasemmanpuolisen ruudun ollessa laatikko
+     * laatikon vasemmanpuolinen ruutu ei ole seinä eikä laatikko.
      */
     public void playerMoveLeft() {
         if (this.player.getTile().getLeft() != null) {
-            if (!wallCollisions.collisionToWallLeft(this.player)) {
+            if (!wallCollisions.isLeftAWall(this.player)) {
                 if (boxCollisions.isLeftABox(player)) {
-                    if (!(boxCollisions.isLeftABox(player.getTile().getLeft().getEntity()) || wallCollisions.collisionToWallLeft(player.getTile().getLeft().getEntity()))) {
+                    if (!(boxCollisions.isLeftABox(player.getTile().getLeft().getEntity()) || wallCollisions.isLeftAWall(player.getTile().getLeft().getEntity()))) {
                         this.player.moveLeft();
                         moveBoxLeft();
                         this.player.setTile(this.player.getTile().getLeft());
@@ -116,16 +120,17 @@ public class MovingLogic {
             }
         }
     }
+
     /**
-     * Metodi siirtää pelaajaa yhden ruudun oikealle, jos oikeanpuolinen ruutu ei ole seinä
-     * tai jos oikeanpuolisen ruudun ollessa laatikko laatikon oikeanpuolinen ruutu ei ole seinä
-     * eikä laatikko.
+     * Metodi siirtää pelaajaa yhden ruudun oikealle, jos oikeanpuolinen ruutu
+     * ei ole seinä tai jos oikeanpuolisen ruudun ollessa laatikko laatikon
+     * oikeanpuolinen ruutu ei ole seinä eikä laatikko.
      */
     public void playerMoveRight() {
         if (this.player.getTile().getRight() != null) {
-            if (!wallCollisions.collisionToWallRight(this.player)) {
+            if (!wallCollisions.isRightAWall(this.player)) {
                 if (boxCollisions.isRightABox(player)) {
-                    if (!(boxCollisions.isRightABox(player.getTile().getRight().getEntity()) || wallCollisions.collisionToWallRight(player.getTile().getRight().getEntity()))) {
+                    if (!(boxCollisions.isRightABox(player.getTile().getRight().getEntity()) || wallCollisions.isRightAWall(player.getTile().getRight().getEntity()))) {
                         this.player.moveRight();
                         moveBoxRight();
                         this.player.setTile(this.player.getTile().getRight());
@@ -137,14 +142,16 @@ public class MovingLogic {
             }
         }
     }
-/**
- * Metodi siirtää laatikkoa ylöspäin, jos laatikko ei törmää seinään tai toiseen laatikkoon.
- */
+
+    /**
+     * Metodi siirtää laatikkoa ylöspäin, jos laatikko ei törmää seinään tai
+     * toiseen laatikkoon.
+     */
     public void moveBoxUp() {
         if (this.player.getTile().getUp().getEntity().getId() == 3) {
             for (Box box : this.boxes) {
                 if (box.getTile() == this.player.getTile().getUp()) {
-                    if (!wallCollisions.collisionToWallUp(box)) {
+                    if (!wallCollisions.isAboveAWall(box)) {
                         if (!boxCollisions.isAboveABox(box)) {
                             box.moveUp();
                             box.getTile().setEntity(new Entity(box.getX(), box.getY()));
@@ -159,14 +166,15 @@ public class MovingLogic {
         }
     }
 
-/**
- * Metodi siirtää laatikkoa alaspäin, jos laatikko ei törmää seinään tai toiseen laatikkoon.
- */
+    /**
+     * Metodi siirtää laatikkoa alaspäin, jos laatikko ei törmää seinään tai
+     * toiseen laatikkoon.
+     */
     public void moveBoxDown() {
         if (this.player.getTile().getDown().getEntity().getId() == 3) {
             for (Box box : this.boxes) {
                 if (box.getTile() == this.player.getTile().getDown()) {
-                    if (!wallCollisions.collisionToWallDown(box)) {
+                    if (!wallCollisions.isUnderAWall(box)) {
                         if (!boxCollisions.isUnderABox(box)) {
                             box.moveDown();
                             box.getTile().setEntity(new Entity(box.getX(), box.getY()));
@@ -181,14 +189,15 @@ public class MovingLogic {
         }
     }
 
-/**
- * Metodi siirtää laatikkoa vasemmalle, jos laatikko ei törmää seinään tai toiseen laatikkoon.
- */
+    /**
+     * Metodi siirtää laatikkoa vasemmalle, jos laatikko ei törmää seinään tai
+     * toiseen laatikkoon.
+     */
     public void moveBoxLeft() {
         if (this.player.getTile().getLeft().getEntity().getId() == 3) {
             for (Box box : this.boxes) {
                 if (box.getTile() == this.player.getTile().getLeft()) {
-                    if (!wallCollisions.collisionToWallLeft(box)) {
+                    if (!wallCollisions.isLeftAWall(box)) {
                         if (!boxCollisions.isLeftABox(box)) {
                             box.moveLeft();
                             box.getTile().setEntity(new Entity(box.getX(), box.getY()));
@@ -203,14 +212,15 @@ public class MovingLogic {
         }
     }
 
-/**
- * Metodi siirtää laatikkoa oikealle, jos laatikko ei törmää seinään tai toiseen laatikkoon.
- */
+    /**
+     * Metodi siirtää laatikkoa oikealle, jos laatikko ei törmää seinään tai
+     * toiseen laatikkoon.
+     */
     public void moveBoxRight() {
         if (this.player.getTile().getRight().getEntity().getId() == 3) {
             for (Box box : this.boxes) {
                 if (box.getTile() == this.player.getTile().getRight()) {
-                    if (!wallCollisions.collisionToWallRight(box)) {
+                    if (!wallCollisions.isRightAWall(box)) {
                         if (!boxCollisions.isRightABox(box)) {
                             box.moveRight();
                             box.getTile().setEntity(new Entity(box.getX(), box.getY()));
@@ -224,12 +234,13 @@ public class MovingLogic {
             }
         }
     }
-    
-/**
- * Metodi tarkistaa, onko laatikko maaliruudussa.
- * @param box Kutsujametodilta saatu laatikko
- * @return Totuusarvomuuttuja, kertoo onko laatikko maalissa vai ei
- */
+
+    /**
+     * Metodi tarkistaa, onko laatikko maaliruudussa.
+     *
+     * @param box Kutsujametodilta saatu laatikko
+     * @return Totuusarvomuuttuja, kertoo onko laatikko maalissa vai ei
+     */
     public boolean isBoxInGoal(Box box) {
         if (box.getTile().getEntity().getId() == 4) {
             box = null;

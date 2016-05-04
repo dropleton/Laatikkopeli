@@ -1,7 +1,6 @@
 /**
- * Luokka perii luokan Entity, minkä lisäksi se toteuttaa liikkumiseen tarvittavat metodit. 
+ * Luokka perii luokan Entity, minkä lisäksi se toteuttaa liikkumiseen tarvittavat metodit.
  */
-
 package theboxgame.entities;
 
 import java.awt.Graphics;

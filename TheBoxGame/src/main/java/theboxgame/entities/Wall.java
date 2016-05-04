@@ -1,15 +1,15 @@
 /**
  * Luokka perii luokalta Entity tarvitsemansa ominaisuudet.
  */
-
 package theboxgame.entities;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
 public class Wall extends Entity {
+
     private final int id;
-    
+
     public Wall(int x, int y) {
         super(x, y);
         this.id = 1;
@@ -20,15 +20,15 @@ public class Wall extends Entity {
         g.setColor(Color.black);
         g.fillRect(x, y, width, height);
     }
-    
+
     @Override
     public int getId() {
         return this.id;
     }
-    
+
     @Override
     public String toString() {
         return "Wall";
     }
-    
+
 }

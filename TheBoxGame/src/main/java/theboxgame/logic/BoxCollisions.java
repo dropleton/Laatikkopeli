@@ -2,20 +2,20 @@
  * Apuluokka luokalle MovingLogic, sisältää tarkistukset pelaajan tai laatikon
  * laatikkoon törmäämisestä.
  */
-
 package theboxgame.logic;
 
 import theboxgame.entities.Entity;
 
 public class BoxCollisions {
-    
+
     /**
      * Metodi tarkistaa, onko yläpuolella laatikkoa.
+     *
      * @param e MovingLogic-luokalta saatu Entity
      * @return Totuusarvomuuttuja, törmääkö laatikkoon vai ei.
      */
     public boolean isAboveABox(Entity e) {
-        if(e.getTile().getUp().getEntity().getId() == 3) {
+        if (e.getTile().getUp().getEntity().getId() == 3) {
             return true;
         }
         return false;
@@ -23,6 +23,7 @@ public class BoxCollisions {
 
     /**
      * Metodi tarkistaa, onko oikealla laatikkoa.
+     *
      * @param e MovingLogic-luokalta saatu Entity
      * @return Totuusarvomuuttuja, törmääkö laatikkoon vai ei.
      */
@@ -35,6 +36,7 @@ public class BoxCollisions {
 
     /**
      * Metodi tarkistaa, onko vasemmalla laatikkoa.
+     *
      * @param e MovingLogic-luokalta saatu Entity
      * @return Totuusarvomuuttuja, törmääkö laatikkoon vai ei.
      */
@@ -47,6 +49,7 @@ public class BoxCollisions {
 
     /**
      * Metodi tarkistaa, onko alapuolella laatikkoa.
+     *
      * @param e MovingLogic-luokalta saatu Entity
      * @return Totuusarvomuuttuja, törmääkö laatikkoon vai ei.
      */

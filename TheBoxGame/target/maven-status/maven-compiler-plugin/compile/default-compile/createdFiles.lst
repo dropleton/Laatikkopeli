@@ -8,7 +8,6 @@ theboxgame/display/Display.class
 theboxgame/entities/Box.class
 theboxgame/input/KeyManager.class
 theboxgame/states/CurrentState.class
-theboxgame/theboxgame/Render.class
 theboxgame/states/State.class
 theboxgame/entities/Tile.class
 theboxgame/theboxgame/Complete.class

@@ -1,7 +1,6 @@
 /**
  * Main-luokka, täältä peli saa karttansa ja peli käynnistetään.
  */
-
 package theboxgame.theboxgame;
 
 public class Launcher {

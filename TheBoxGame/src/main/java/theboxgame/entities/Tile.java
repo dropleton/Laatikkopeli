@@ -2,7 +2,6 @@
  * Luokka sisältää yksittäisen Tilen sijainnin, leveyden, korkeuden, siinä mahdollisesti olevan
  * Entityn ja sitä ympäröivät Tilet.
  */
-
 package theboxgame.entities;
 
 public class Tile {
@@ -12,7 +11,6 @@ public class Tile {
     private final int y;
     private Entity entity;
     private Tile up, down, left, right;
-    
 
     public Tile(int x, int y) {
         this.x = x;
@@ -22,7 +20,7 @@ public class Tile {
     public void setEntity(Entity e) {
         this.entity = e;
     }
-    
+
     public Entity getEntity() {
         return this.entity;
     }
@@ -66,7 +64,7 @@ public class Tile {
     public Tile getRight() {
         return right;
     }
-    
+
     @Override
     public String toString() {
         return this.x + "," + this.y;

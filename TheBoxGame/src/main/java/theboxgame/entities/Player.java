@@ -1,20 +1,20 @@
 /**
- * Luokka perii luokalta Movable liikkumiseen tarvittavat ominaisuudet. 
+ * Luokka perii luokalta Movable liikkumiseen tarvittavat ominaisuudet.
  */
-
 package theboxgame.entities;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Player extends Movable{
+public class Player extends Movable {
+
     private final int id;
-    
+
     public Player(int x, int y) {
         super(x, y);
         this.id = 2;
     }
-    
+
     @Override
     public int getId() {
         return this.id;
@@ -25,7 +25,7 @@ public class Player extends Movable{
         g.setColor(Color.red);
         g.fillRect(x, y, width, height);
     }
-    
+
     @Override
     public String toString() {
         return "Player";

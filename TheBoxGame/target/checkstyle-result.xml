@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/entities/Movable.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/entities/Wall.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/entities/Player.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/entities/Box.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/entities/Tile.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/entities/Goal.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/entities/Entity.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/logic/BoxCollisions.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/logic/WallCollisions.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/logic/MovingLogic.java">
+<error line="1" severity="error" message="File length is 253 lines (max allowed is 200)." source="com.puppycrawl.tools.checkstyle.checks.sizes.FileLengthCheck"/>
+<error line="67" column="21" severity="error" message="Nested if-else depth is 3 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="89" column="21" severity="error" message="Nested if-else depth is 3 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="111" column="21" severity="error" message="Nested if-else depth is 3 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="133" column="21" severity="error" message="Nested if-else depth is 3 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="155" column="25" severity="error" message="Nested if-else depth is 3 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="159" column="29" severity="error" message="Nested if-else depth is 4 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="178" column="25" severity="error" message="Nested if-else depth is 3 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="182" column="29" severity="error" message="Nested if-else depth is 4 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="201" column="25" severity="error" message="Nested if-else depth is 3 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="205" column="29" severity="error" message="Nested if-else depth is 4 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="224" column="25" severity="error" message="Nested if-else depth is 3 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="228" column="29" severity="error" message="Nested if-else depth is 4 (max allowed is 2)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/logic/World.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/theboxgame/Complete.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/theboxgame/Game.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/theboxgame/Launcher.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/display/Display.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/input/KeyManager.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/states/CurrentState.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/states/GameState.java">
+</file>
+<file name="/home/jetolvan/TheBoxGame/src/main/java/theboxgame/states/State.java">
+</file>
+</checkstyle>

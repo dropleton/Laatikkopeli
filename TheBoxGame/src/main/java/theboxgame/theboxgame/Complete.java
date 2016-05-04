@@ -1,7 +1,6 @@
 /**
  * Luokka huolehtii Complete-tekstin piirtämisestä pelin päätyttyä.
  */
-
 package theboxgame.theboxgame;
 
 import java.awt.Graphics;
@@ -20,11 +19,11 @@ public class Complete {
             g.drawChars(complete, 0, complete.length, 10, 30);
         }
     }
-    
+
     public void setComplete() {
         this.c = true;
     }
-    
+
     public boolean getComplete() {
         return this.c;
     }
