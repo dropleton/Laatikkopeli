@@ -16,4 +16,6 @@ Päivä | Tunnit | Kuvaus
 27.04.2016 | 5h | Valmis graafinen käyttöliittymä, poislukien laatikoiden katoaminen maaliruudussa. Liikutettavien Entityjen lähtöruudun väri jostain syystä aina punainen
 29.04.2016 | 4h | Laatikot katoavat maaliruudussa, lähtöruutujen väri vielä korjaamatta. Pelin lopetus lisätty, pitin kanssa tuskailua
 02.05.2016 | 3,5h | Luokkien siistintää, uusi luokkakaavio, pitin kanssa tuskailua
-
+04.05.2016 | 2h | Pitin, Checkstylen ja JavaDocin kanssa tuskailua
+05.05.2016 | 2,5h | Sekvenssikaavioiden tekoa
+06.05.2016 | 4,5h | Luokkien MovingLogic ja World testausta sekä muiden luokkien testauksen täydentämistä
