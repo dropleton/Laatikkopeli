@@ -5,3 +5,5 @@
 /home/jetolvan/TheBoxGame/src/test/java/theboxgame/entities/PlayerTest.java
 /home/jetolvan/TheBoxGame/src/test/java/theboxgame/entities/TileTest.java
 /home/jetolvan/TheBoxGame/src/test/java/theboxgame/entities/BoxTest.java
+/home/jetolvan/TheBoxGame/src/test/java/theboxgame/logic/WorldTest.java
+/home/jetolvan/TheBoxGame/src/test/java/theboxgame/logic/MovingLogicTest.java

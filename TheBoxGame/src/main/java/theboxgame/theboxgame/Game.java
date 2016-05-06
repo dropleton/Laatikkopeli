@@ -20,8 +20,8 @@ public class Game implements Runnable {
     private Thread thread;
     private boolean running = false;
 
-    public int width, height;
-    public String title;
+    private int width, height;
+    private String title;
 
     private BufferStrategy bs;
     private Graphics g;

@@ -15,3 +15,7 @@ Ohjelman käynnistyessä avautuu pelikenttä, jossa on laatikoita, esteitä ja p
 
 ![Luokkakaavio](https://github.com/dropleton/Laatikkopeli/blob/master/dokumentointi/Luokkakaavio.png "Luokkakaavio")
 
+**Sekvenssikaaviot:**
+![Painetaan vasenta nuolinäppäintä](https://github.com/dropleton/Laatikkopeli/blob/master/dokumentointi/%20painetaan%20vasenta%20nuolinappainta.png "Painetaan vasenta nuolinäppäintä")
+
+![Viimeinen laatikko työnnetty maaliin](https://github.com/dropleton/Laatikkopeli/blob/master/dokumentointi/viimeinen%20laatikko%20tyonnetty%20maaliin.png "Viimeinen laatikko työnnetty maaliin")

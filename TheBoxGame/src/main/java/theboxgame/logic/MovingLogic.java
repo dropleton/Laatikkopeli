@@ -61,18 +61,16 @@ public class MovingLogic {
      * yläpuolinen ruutu ei ole seinä eikä laatikko.
      */
     public void playerMoveUp() {
-        if (this.player.getTile().getUp() != null) {
-            if (!wallCollisions.isAboveAWall(this.player)) {
-                if (boxCollisions.isAboveABox(player)) {
-                    if (!(boxCollisions.isAboveABox(player.getTile().getUp().getEntity()) || wallCollisions.isAboveAWall(player.getTile().getUp().getEntity()))) {
-                        this.player.moveUp();
-                        moveBoxUp();
-                        this.player.setTile(this.player.getTile().getUp());
-                    }
-                } else {
+        if (!wallCollisions.isAboveAWall(this.player)) {
+            if (boxCollisions.isAboveABox(player)) {
+                if (!(boxCollisions.isAboveABox(player.getTile().getUp().getEntity()) || wallCollisions.isAboveAWall(player.getTile().getUp().getEntity()))) {
                     this.player.moveUp();
+                    moveBoxUp();
                     this.player.setTile(this.player.getTile().getUp());
                 }
+            } else {
+                this.player.moveUp();
+                this.player.setTile(this.player.getTile().getUp());
             }
         }
     }
@@ -83,18 +81,16 @@ public class MovingLogic {
      * alapuolinen ruutu ei ole seinä eikä laatikko.
      */
     public void playerMoveDown() {
-        if (this.player.getTile().getDown() != null) {
-            if (!wallCollisions.isUnderAWall(this.player)) {
-                if (boxCollisions.isUnderABox(player)) {
-                    if (!(boxCollisions.isUnderABox(player.getTile().getDown().getEntity()) || wallCollisions.isUnderAWall(player.getTile().getDown().getEntity()))) {
-                        this.player.moveDown();
-                        moveBoxDown();
-                        this.player.setTile(this.player.getTile().getDown());
-                    }
-                } else {
+        if (!wallCollisions.isUnderAWall(this.player)) {
+            if (boxCollisions.isUnderABox(player)) {
+                if (!(boxCollisions.isUnderABox(player.getTile().getDown().getEntity()) || wallCollisions.isUnderAWall(player.getTile().getDown().getEntity()))) {
                     this.player.moveDown();
+                    moveBoxDown();
                     this.player.setTile(this.player.getTile().getDown());
                 }
+            } else {
+                this.player.moveDown();
+                this.player.setTile(this.player.getTile().getDown());
             }
         }
     }
@@ -105,18 +101,16 @@ public class MovingLogic {
      * laatikon vasemmanpuolinen ruutu ei ole seinä eikä laatikko.
      */
     public void playerMoveLeft() {
-        if (this.player.getTile().getLeft() != null) {
-            if (!wallCollisions.isLeftAWall(this.player)) {
-                if (boxCollisions.isLeftABox(player)) {
-                    if (!(boxCollisions.isLeftABox(player.getTile().getLeft().getEntity()) || wallCollisions.isLeftAWall(player.getTile().getLeft().getEntity()))) {
-                        this.player.moveLeft();
-                        moveBoxLeft();
-                        this.player.setTile(this.player.getTile().getLeft());
-                    }
-                } else {
+        if (!wallCollisions.isLeftAWall(this.player)) {
+            if (boxCollisions.isLeftABox(player)) {
+                if (!(boxCollisions.isLeftABox(player.getTile().getLeft().getEntity()) || wallCollisions.isLeftAWall(player.getTile().getLeft().getEntity()))) {
                     this.player.moveLeft();
+                    moveBoxLeft();
                     this.player.setTile(this.player.getTile().getLeft());
                 }
+            } else {
+                this.player.moveLeft();
+                this.player.setTile(this.player.getTile().getLeft());
             }
         }
     }
@@ -127,18 +121,16 @@ public class MovingLogic {
      * oikeanpuolinen ruutu ei ole seinä eikä laatikko.
      */
     public void playerMoveRight() {
-        if (this.player.getTile().getRight() != null) {
-            if (!wallCollisions.isRightAWall(this.player)) {
-                if (boxCollisions.isRightABox(player)) {
-                    if (!(boxCollisions.isRightABox(player.getTile().getRight().getEntity()) || wallCollisions.isRightAWall(player.getTile().getRight().getEntity()))) {
-                        this.player.moveRight();
-                        moveBoxRight();
-                        this.player.setTile(this.player.getTile().getRight());
-                    }
-                } else {
+        if (!wallCollisions.isRightAWall(this.player)) {
+            if (boxCollisions.isRightABox(player)) {
+                if (!(boxCollisions.isRightABox(player.getTile().getRight().getEntity()) || wallCollisions.isRightAWall(player.getTile().getRight().getEntity()))) {
                     this.player.moveRight();
+                    moveBoxRight();
                     this.player.setTile(this.player.getTile().getRight());
                 }
+            } else {
+                this.player.moveRight();
+                this.player.setTile(this.player.getTile().getRight());
             }
         }
     }
@@ -249,5 +241,4 @@ public class MovingLogic {
         }
         return false;
     }
-
 }

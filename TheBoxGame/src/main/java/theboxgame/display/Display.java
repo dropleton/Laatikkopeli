@@ -1,3 +1,6 @@
+/**
+ * Luokka huolehtii ikkunan piirtämisestä.
+ */
 package theboxgame.display;
 
 import java.awt.Canvas;
@@ -9,7 +12,7 @@ public class Display {
     private JFrame frame;
     private Canvas canvas;
     private String title;
-    int width, height;
+    private int width, height;
 
     public Display(String title, int width, int height) {
         this.title = title;
@@ -30,7 +33,7 @@ public class Display {
         frame.pack();
     }
 
-    public void createCanvas() {
+    private void createCanvas() {
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width, height));
         canvas.setMaximumSize(new Dimension(width, height));

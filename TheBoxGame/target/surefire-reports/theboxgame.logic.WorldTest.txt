@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: theboxgame.entities.BoxTest
+Test set: theboxgame.logic.WorldTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec

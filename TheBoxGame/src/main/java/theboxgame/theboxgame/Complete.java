@@ -12,6 +12,11 @@ public class Complete {
     public Complete() {
         this.c = false;
     }
+    
+    /**
+     * Metodi piirtää tekstin "complete" kun peli on päättynyt.
+     * @param g Luokalta Game saatu graphics-olion ilmentymä
+     */
 
     public void render(Graphics g) {
         if (c) {

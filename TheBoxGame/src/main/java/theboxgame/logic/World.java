@@ -119,9 +119,9 @@ public class World {
                     default:
                         break;
                 }
-
             }
         }
+        System.out.println("SetEntities done");
     }
 
     public Player getPlayer() {
@@ -142,6 +142,10 @@ public class World {
 
     public ArrayList<Entity> getEmpties() {
         return this.empties;
+    }
+    
+    public Tile[][] getTiles() {
+        return this.tiles;
     }
 
 }
