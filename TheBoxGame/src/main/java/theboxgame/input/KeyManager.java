@@ -18,7 +18,6 @@ public class KeyManager implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
 
     @Override
@@ -39,12 +38,9 @@ public class KeyManager implements KeyListener {
             default:
                 break;
         }
-
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
-
 }

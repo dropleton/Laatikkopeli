@@ -19,3 +19,4 @@ Päivä | Tunnit | Kuvaus
 04.05.2016 | 2h | Pitin, Checkstylen ja JavaDocin kanssa tuskailua
 05.05.2016 | 2,5h | Sekvenssikaavioiden tekoa
 06.05.2016 | 4,5h | Luokkien MovingLogic ja World testausta sekä muiden luokkien testauksen täydentämistä
+08.05.2016 | 4h | Testaus luokalle Display, .jar-tiedoston luominen, dokumentoinnin hienosäätöä, yleinen projektin tarkastus

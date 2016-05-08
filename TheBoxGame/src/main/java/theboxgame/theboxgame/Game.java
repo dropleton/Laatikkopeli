@@ -113,7 +113,6 @@ public class Game implements Runnable {
                 this.c.setComplete();
             }
         }
-
     }
 
     /**

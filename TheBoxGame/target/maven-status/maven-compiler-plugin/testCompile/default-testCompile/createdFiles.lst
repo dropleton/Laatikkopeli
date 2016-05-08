@@ -4,6 +4,8 @@ theboxgame/entities/EntityTest.class
 theboxgame/logic/WorldTest.class
 theboxgame/entities/GoalTest.class
 theboxgame/entities/TileTest.class
+theboxgame/theboxgame/CompleteTest.class
+theboxgame/display/DisplayTest.class
 theboxgame/entities/BoxTest.class
 theboxgame/entities/MovableTest.class
 theboxgame/logic/MovingLogicTest.class
